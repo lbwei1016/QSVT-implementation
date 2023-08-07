@@ -17,7 +17,7 @@ import time
 
 
 # matrix size exponent
-N = 1
+N = 9
 
 # # Generate a random circulant matrix.
 # np.random.seed(0)
@@ -60,6 +60,7 @@ def gen_random_matrix(kappa_upper, d):
             return A
         
 A = gen_random_matrix(50-1e-9, 2**(N))
+print('==================================')
 print(f'A:\n{A}')
 
 
@@ -80,10 +81,10 @@ W, S, Vd = np.linalg.svd(A)
 # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
 st = time.time()
-# qc = linear_solver(A)
+qc = linear_solver(A)
 # qc = linear_solver(A, eps=0.01, set_kappa=True)
 # qc = linear_solver(A, set_kappa=True)
-qc = linear_solver(A, set_kappa=True, amplify='AA')
+# qc = linear_solver(A, set_kappa=True, amplify='AA')
 # qc = linear_solver(A, set_kappa=True, amplify='sign')
 # qc = linear_solver(A, amplify='sign')
 # qc = linear_solver(A, real_only=False)
@@ -96,6 +97,8 @@ print(f'prepare circuit spends: {ed - st} sec')
 # print(f'circuit depth: {qc.depth()}')
 # qc.draw('mpl')
 
+print('==================================')
+
 st = time.time()
 state = Statevector(qc)
 ed = time.time()
@@ -105,12 +108,12 @@ n = qc.num_qubits
 print(f'number of qubits: {n}')
 
 # for AA
-measure_qubits = [n - 3, n - 2]
-exp_outcome = "00"
+#measure_qubits = [n - 3, n - 2]
+#exp_outcome = "00"
 
-# for no AA
-# measure_qubits = [n - 2, n - 1]
-# exp_outcome = "00"
+#for no AA
+measure_qubits = [n - 2, n - 1]
+exp_outcome = "00"
 
 # for no AA and no real_only
 # measure_qubits = [n - 1]
@@ -125,10 +128,10 @@ print(f'post-measurement state: {mstate}')
 print(f'post-selection spends: {ed - st} sec')
 
 # for AA: 3 ancilla qubits
-res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
+#res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
 
 # for no AA: 2 ancilla qubits
-# res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
+res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
 
 # for no AA and no real_only: 1 ancilla qubits
 # res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 1) - 1)))
@@ -139,12 +142,13 @@ print(f'res: {res}')
 
 # Calculate total variance
 
+print('==================================')
 P = np.array([mstate[i] for i in range(2 ** N)])
 P = np.array([np.linalg.norm(x)**2 for x in P])
-print(f'P: {P}')
+#print(f'P: {P}')
 # res = [-0.63012604,  0.070014,    0.070014,    0.77015405]
 Q = np.array([x ** 2 for x in res])
-print(f'Q: {Q}')
+#print(f'Q: {Q}')
 
 print(f'kappa: {kappa}')
 print(f'total_variation (exact): {total_variation(P, Q)}')
@@ -153,6 +157,7 @@ print(f'total_variation (exact): {total_variation(P, Q)}')
 # cr = ClassicalRegister(len(measure_qubits))
 # qc.add_register(cr)
 # qc.measure(measure_qubits, cr)
+print('==================================')
 qc.measure_all()
 print(f'qc depth: {qc.depth()}')
 
@@ -185,7 +190,7 @@ exp_counts = exp_result.get_counts()
 
 # Calculate total variance
 # experiment count
-print(f'exp_counts: {exp_counts}')
+#print(f'exp_counts: {exp_counts}')
 valid_count = np.zeros(shape=(2 ** N))
 for data in exp_counts:
     # print(f'data: {data[:]}')
@@ -194,10 +199,10 @@ for data in exp_counts:
         valid_count[int(data[2:], base=2)] = exp_counts[data]
 valid_count /= shots
 valid_count /= np.linalg.norm(valid_count)
-print(f'valid_count: {valid_count}')
+#print(f'valid_count: {valid_count}')
 
 Q = np.array([x ** 2 for x in res])
-print(f'Q: {Q}')
+#print(f'Q: {Q}')
 
 print(f'kappa: {kappa}')
 print(f'total_variation (exp): {total_variation(valid_count, Q)}')

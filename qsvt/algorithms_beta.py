@@ -409,6 +409,8 @@ def linear_solver(
         # _, phi_seq = convert_convention(Wx_seq)
 
         # print(f'phi_seq (deg = {deg}): {list(phi_seq)}')
+    else:
+        phi_seq = phi_seq_121
 
     import time
     st = time.time()
