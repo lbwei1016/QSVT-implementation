@@ -14,10 +14,56 @@ from qiskit_aer import AerSimulator
 from qiskit.visualization import plot_histogram
 
 import time
+import getopt, sys
 
 
+AA_On = False
+set_kappa = False
 # matrix size exponent
-N = 9
+N = 1
+
+
+# Remove 1st argument from the
+# list of command line arguments
+argumentList = sys.argv[1:]
+
+# Options
+options = "hN:ak"
+
+# Long options
+long_options = ["help", "Num_of_qubits_for_matrix=", "AA", "set_kappa"]
+
+try:
+	# Parsing argument
+	arguments, values = getopt.getopt(argumentList, options, long_options)
+	
+	# checking each argument
+	for currentArgument, currentValue in arguments:
+
+		if currentArgument in ("-h", "--help"):
+			help_msg = """
+                -h: show help
+                -N <Number of qubits for matrix>: specify matrix size
+                -a: Use AA
+	        """
+			print(help_msg)
+			
+		elif currentArgument in ("-N", "--Num_of_qubits_for_matrix"):
+                        N = int(currentValue)
+                        print(f'N = {currentValue}')
+			
+		elif currentArgument in ("-a", "--AA"):
+                        AA_On = True
+                        print('AA is on')
+		elif currentArgument in ("-k", "--set_kappa"):
+                        set_kappa = True
+                        print("set kappa is on")
+			
+except getopt.error as err:
+	# output error, and return with an error code
+	print (str(err))
+
+#N = 9
 
 # # Generate a random circulant matrix.
 # np.random.seed(0)
@@ -81,10 +127,12 @@ W, S, Vd = np.linalg.svd(A)
 # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
 st = time.time()
-qc = linear_solver(A)
+if not AA_On:
+    qc = linear_solver(A, set_kappa=set_kappa)
+else:
+    qc = linear_solver(A, set_kappa=set_kappa, amplify='AA')
 # qc = linear_solver(A, eps=0.01, set_kappa=True)
 # qc = linear_solver(A, set_kappa=True)
-# qc = linear_solver(A, set_kappa=True, amplify='AA')
 # qc = linear_solver(A, set_kappa=True, amplify='sign')
 # qc = linear_solver(A, amplify='sign')
 # qc = linear_solver(A, real_only=False)
@@ -107,12 +155,12 @@ print(f'prepare state snapshot spends: {ed - st} sec')
 n = qc.num_qubits
 print(f'number of qubits: {n}')
 
-# for AA
-#measure_qubits = [n - 3, n - 2]
-#exp_outcome = "00"
+# for AA or not
+if AA_On:
+    measure_qubits = [n - 3, n - 2]
+else:
+    measure_qubits = [n - 2, n - 1]
 
-#for no AA
-measure_qubits = [n - 2, n - 1]
 exp_outcome = "00"
 
 # for no AA and no real_only
@@ -128,10 +176,11 @@ print(f'post-measurement state: {mstate}')
 print(f'post-selection spends: {ed - st} sec')
 
 # for AA: 3 ancilla qubits
-#res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
-
-# for no AA: 2 ancilla qubits
-res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
+if AA_On:
+    res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
+else:
+    # for no AA: 2 ancilla qubits
+    res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
 
 # for no AA and no real_only: 1 ancilla qubits
 # res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 1) - 1)))
@@ -206,3 +255,4 @@ Q = np.array([x ** 2 for x in res])
 
 print(f'kappa: {kappa}')
 print(f'total_variation (exp): {total_variation(valid_count, Q)}')
+
