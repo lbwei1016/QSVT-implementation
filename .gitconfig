@@ -1,0 +1,14 @@
+[user]
+	email = 0800680274united@gmail.com
+	name = lbwei
+[alias]
+	ph = push
+	ct = commit
+	a = add .
+	st  = status
+	ch = checkout
+	pl = pull
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false

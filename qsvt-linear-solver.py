@@ -16,9 +16,9 @@ from qiskit_aer import AerSimulator
 import time
 import getopt, sys
 
-import memory_profiler
+# import memory_profiler
 
-@memory_profiler.profile
+# @memory_profiler.profile
 def exec():
 
     TOTAL_TIME = 0
