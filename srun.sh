@@ -1,4 +1,6 @@
 #!/bin/bash
+# on nchc twnia3
+# not up-to-date (check run.sh)
 
 START=$1
 END=15
