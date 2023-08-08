@@ -5,6 +5,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+import time
+
+# import numba
+
 
 # Credit: "qsppack" (https://github.com/qsppack/QSPPACK)
 def cvx_poly_coef(func, deg, opts=None):
@@ -228,3 +232,56 @@ def sinkx(S, k):
     return fS
 
 ##############################################################################
+
+# # Generate a random circulant matrix.
+def circulant_matrix(N):
+    # a = [np.random.random() for _ in range(2 ** N)]
+
+    np.random.seed(65535)
+
+    a, b = np.random.random(2**N), np.random.random(2**N)
+    for i in range(2 ** N):
+        # k = np.random.random()
+        if b[i] > 0.5: 
+            a[i] *= -1
+    # print(a)
+
+    # A = []
+    A = np.zeros((2**N, 2**N))
+    # for _ in range(2 ** N):
+    #     A.append(a)
+    #     a = np.roll(a, 1)
+
+    # A = np.array(A)
+
+    for i in range(2 ** N):
+        A[i] = a
+        a = np.roll(a, 1)
+    # kappa = np.linalg.cond(A)
+    return A
+
+def sparse_matrix(A, d):
+    L = len(A)
+    zero_num = L - d
+    for i in range(L):
+        zero_pos = np.random.choice(range(L), zero_num)
+        for j in zero_pos:
+            A[i, j] = 0
+    return A
+
+def gen_random_matrix(kappa_upper, d, N):
+    while True:
+        st = time.time()
+        A = circulant_matrix(N)
+        ed = time.time()
+        print(f'time: {ed - st}')
+
+        # no sparse currently
+        # d = min(d, 2**N)
+        # A = sparse_matrix(A, d)
+
+        # kappa = np.linalg.cond(A)
+        # print(f'kappa: {kappa}')
+        # if kappa <= kappa_upper: 
+        #     return A
+        return A

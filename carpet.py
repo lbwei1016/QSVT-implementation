@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 
+from memory_profiler import profile
+
 class InfiniteWell:
     def __init__(self, psi0, width, nbase, nint):
         self.width = width
@@ -41,17 +43,21 @@ def psi0(x):
     sigma = 0.005
     return exp(-x**2/(2*sigma))/(pi*sigma)**0.25
 
-w = InfiniteWell(psi0=psi0, width=2, nbase=100, nint=1000)
-x = np.linspace(-0.5*w.width, 0.5*w.width, 500)
-ntmax = 1000
-z = np.zeros((500, ntmax))
-for n in range(ntmax):
-    t = 0.25*pi*n/(ntmax-1)
-    y = np.array([abs(w.psi(x, t))**2 for x in x])
-    z[:, n] = y
-z = z/np.max(z)
-# plt.rc('text', usetex=True)
-# plt.imshow(z, cmap=cm.hot)
-# plt.xlabel('$t$', fontsize=20)
-# plt.ylabel('$x$', fontsize=20)
-# plt.show()
+
+@profile
+def exec():
+    w = InfiniteWell(psi0=psi0, width=2, nbase=100, nint=1000)
+    x = np.linspace(-0.5*w.width, 0.5*w.width, 500)
+    ntmax = 10
+    z = np.zeros((500, ntmax))
+    for n in range(ntmax):
+        t = 0.25*pi*n/(ntmax-1)
+        y = np.array([abs(w.psi(x, t))**2 for x in x])
+        z[:, n] = y
+    z = z/np.max(z)
+    # plt.rc('text', usetex=True)
+    # plt.imshow(z, cmap=cm.hot)
+    # plt.xlabel('$t$', fontsize=20)
+    # plt.ylabel('$x$', fontsize=20)
+    # plt.show()
+exec()
