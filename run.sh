@@ -14,9 +14,9 @@ do
         record="./results_tmp/${filename}.txt"
         profile="./profiles_tmp/${filename}.prof"
 
-        time python3 -m cProfile -o "${filename}.prof" qsvt-linear-solver.py -N ${N} -d ${d} > ${file}
+        time python3 -m cProfile -o "${profile}" qsvt-linear-solver.py -N ${N} -d ${d} > ${file}
 
-        if [ ! -s ${file} ];
+        if [ ! -s "${record}" ];
         then
             echo "N = ${N} does not finish!" 
             break
