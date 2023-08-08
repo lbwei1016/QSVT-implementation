@@ -1,8 +1,17 @@
 #!/bin/bash
 
-for N in {7..15} 
+START=$1
+END=15
+for N in $(seq $START $END)
 do
     echo "Now running N = ${N}."
-    python3 qsvt-linear-solver.py -N ${N} > "${N}q-nAA-121.txt"
+    file="./results_tmp/${N}q-nAA-121.txt"
+    time srun python3 qsvt-linear-solver.py -N ${N} > ${file}
+
+    if [ ! -s ${file} ];
+    then
+	echo "N = ${N} does not finish!" 
+	break
+    fi
     echo "N = ${N} done!"
 done

@@ -1,7 +1,7 @@
-from qiskit import QuantumCircuit
-from qiskit.circuit import QuantumRegister, ClassicalRegister
-from qiskit.extensions import UnitaryGate
-from qiskit.quantum_info import Operator, Statevector
+#from qiskit import QuantumCircuit
+#from qiskit.circuit import QuantumRegister, ClassicalRegister
+#from qiskit.extensions import UnitaryGate
+from qiskit.quantum_info import Statevector
 
 import numpy as np
 
@@ -11,7 +11,7 @@ from qsvt.helper import total_variation
 
 from qiskit import transpile
 from qiskit_aer import AerSimulator
-from qiskit.visualization import plot_histogram
+#from qiskit.visualization import plot_histogram
 
 import time
 import getopt, sys
@@ -105,7 +105,10 @@ def gen_random_matrix(kappa_upper, d):
         if kappa <= kappa_upper: 
             return A
         
+st = time.time()
 A = gen_random_matrix(50-1e-9, 2**(N))
+ed = time.time()
+print(f'generate matrix time spent: {ed - st}')
 print('==================================')
 print(f'A:\n{A}')
 
@@ -190,7 +193,7 @@ res /= np.linalg.norm(res)
 print(f'res: {res}')
 
 
-# Calculate total variance
+# Calculate total variation
 
 print('==================================')
 P = np.array([mstate[i] for i in range(2 ** N)])
@@ -243,6 +246,8 @@ exp_counts = exp_result.get_counts()
 # Calculate total variance
 # experiment count
 #print(f'exp_counts: {exp_counts}')
+
+st = time.time()
 valid_count = np.zeros(shape=(2 ** N))
 for data in exp_counts:
     # print(f'data: {data[:]}')
@@ -254,10 +259,13 @@ valid_count /= np.linalg.norm(valid_count)
 #print(f'valid_count: {valid_count}')
 
 Q = np.array([x ** 2 for x in res])
+tot_var = total_variation(valid_count, Q)
+ed = time.time()
+print(f'total var. (exact) time spent: {ed - st}')
 #print(f'Q: {Q}')
 
 print(f'kappa: {kappa}')
-print(f'total_variation (exp): {total_variation(valid_count, Q)}')
+print(f'total_variation (exp): {tot_var}')
 print('==================================')
 
 print(f'total execution time (exclude snapshot): {TOTAL_TIME}')
