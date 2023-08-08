@@ -16,7 +16,7 @@ from qiskit.visualization import plot_histogram
 import time
 import getopt, sys
 
-
+TOTAL_TIME = 0
 AA_On = False
 set_kappa = False
 # matrix size exponent
@@ -35,29 +35,29 @@ long_options = ["help", "Num_of_qubits_for_matrix=", "AA", "set_kappa"]
 
 try:
 	# Parsing argument
-	arguments, values = getopt.getopt(argumentList, options, long_options)
+    arguments, values = getopt.getopt(argumentList, options, long_options)
 	
 	# checking each argument
-	for currentArgument, currentValue in arguments:
+    for currentArgument, currentValue in arguments:
 
-		if currentArgument in ("-h", "--help"):
-			help_msg = """
-                -h: show help
-                -N <Number of qubits for matrix>: specify matrix size
-                -a: Use AA
-	        """
-			print(help_msg)
+        if currentArgument in ("-h", "--help"):
+            help_msg = """
+-h: show help
+-N <Number of qubits for matrix>: specify matrix size
+-a: Use AA
+              """
+            print(help_msg)
 			
-		elif currentArgument in ("-N", "--Num_of_qubits_for_matrix"):
-                        N = int(currentValue)
-                        print(f'N = {currentValue}')
+        elif currentArgument in ("-N", "--Num_of_qubits_for_matrix"):
+            N = int(currentValue)
+            print(f'N = {currentValue}')
 			
-		elif currentArgument in ("-a", "--AA"):
-                        AA_On = True
-                        print('AA is on')
-		elif currentArgument in ("-k", "--set_kappa"):
-                        set_kappa = True
-                        print("set kappa is on")
+        elif currentArgument in ("-a", "--AA"):
+            AA_On = True
+            print('AA is on')
+        elif currentArgument in ("-k", "--set_kappa"):
+            set_kappa = True
+            print("set kappa is on")
 			
 except getopt.error as err:
 	# output error, and return with an error code
@@ -140,6 +140,7 @@ else:
 # qc = linear_solver(A, amplify='sign')
 # qc = linear_solver(A, amplify='AA')
 ed = time.time()
+TOTAL_TIME += (ed - st)
 print(f'prepare circuit spends: {ed - st} sec')
 
 # print(f'circuit depth: {qc.depth()}')
@@ -221,6 +222,7 @@ transpiled_circuit = transpile(qc, sim)
 # transpiled_circuit = transpile(qc, sim, optimization_level=3)
 ed = time.time()
 print(f'transpilation spends: {ed - st} sec')
+TOTAL_TIME += (ed - st)
 # transpiled_circuit = transpile(qc, sim, optimization_level=3)
 print(f'transpiled qc depth: {transpiled_circuit.depth()}')
 
@@ -232,6 +234,7 @@ job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=Tru
 ed = time.time()
 
 print(f'run job spends: {ed - st} sec')
+TOTAL_TIME += (ed - st)
 # Get the results and display them
 exp_result = job.result()
 exp_counts = exp_result.get_counts()
@@ -255,4 +258,6 @@ Q = np.array([x ** 2 for x in res])
 
 print(f'kappa: {kappa}')
 print(f'total_variation (exp): {total_variation(valid_count, Q)}')
+print('==================================')
 
+print(f'total execution time (exclude snapshot): {TOTAL_TIME}')

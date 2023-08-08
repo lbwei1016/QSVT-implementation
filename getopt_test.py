@@ -19,9 +19,9 @@ try:
 
 		if currentArgument in ("-h", "--help"):
 			help_msg = """
-                -h: show help
-                -n <number of qubits for matrix>: specify matrix size
-                -a: Use AA
+-h: show help
+-n <number of qubits for matrix>: specify matrix size
+-a: Use AA
 	        """
 			print(help_msg)
 			
