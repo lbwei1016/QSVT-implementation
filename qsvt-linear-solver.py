@@ -108,7 +108,7 @@ def gen_random_matrix(kappa_upper, d):
 st = time.time()
 A = gen_random_matrix(50-1e-9, 2**(N))
 ed = time.time()
-print(f'generate matrix time spent: {ed - st}')
+print(f'generate matrix time spent: {ed - st} sec')
 print('==================================')
 print(f'A:\n{A}')
 
@@ -268,4 +268,4 @@ print(f'kappa: {kappa}')
 print(f'total_variation (exp): {tot_var}')
 print('==================================')
 
-print(f'total execution time (exclude snapshot): {TOTAL_TIME}')
+print(f'total execution time (exclude snapshot): {TOTAL_TIME} sec')

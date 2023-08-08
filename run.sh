@@ -6,7 +6,7 @@ for N in $(seq $START $END)
 do
     echo "Now running N = ${N}."
     file="./results_tmp/${N}q-nAA-121.txt"
-    time srun python3 qsvt-linear-solver.py -N ${N} > ${file}
+    time srun python3 -m cProfile -o "${N}q.prof" qsvt-linear-solver.py -N ${N} > ${file}
 
     if [ ! -s ${file} ];
     then
