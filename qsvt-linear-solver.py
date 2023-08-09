@@ -94,8 +94,8 @@ def exec():
     print(f'time spent for calculating condition number: {ed - st} sec')
     print(f'kappa: {kappa}')
 
-    # W, S, Vd = np.linalg.svd(A)
-    # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
+    W, S, Vd = np.linalg.svd(A)
+    print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
     st = time.time()
     if not AA_On:
@@ -183,31 +183,32 @@ def exec():
     qc.measure_all()
     print(f'qc depth: {qc.depth()}')
 
-    # It seems that even if 'GPU' is specified, GPU is not used at all.
-    # Since QSVT involves large multi-qubit gates (block-encoding), "extended_stabilizer" is not efficient.
-    # sim = AerSimulator(method='extended_stabilizer')
-    sim = AerSimulator(method='statevector')
-    # sim = AerSimulator(method='statevector', device='GPU')
+    # # It seems that even if 'GPU' is specified, GPU is not used at all.
+    # # Since QSVT involves large multi-qubit gates (block-encoding), "extended_stabilizer" is not efficient.
+    # # sim = AerSimulator(method='extended_stabilizer')
+    # # sim = AerSimulator(method='statevector')
+    # sim = AerSimulator(method='density_matrix')
+    # # sim = AerSimulator(method='statevector', device='GPU')
 
-    st = time.time()
-    transpiled_circuit = transpile(qc, sim)
-    # transpiled_circuit = transpile(qc, sim, optimization_level=3)
-    ed = time.time()
-    print(f'transpilation spends: {ed - st} sec')
-    TOTAL_TIME += (ed - st)
-    # transpiled_circuit = transpile(qc, sim, optimization_level=3)
-    print(f'transpiled qc depth: {transpiled_circuit.depth()}')
+    # st = time.time()
+    # transpiled_circuit = transpile(qc, sim)
+    # # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+    # ed = time.time()
+    # print(f'transpilation spends: {ed - st} sec')
+    # TOTAL_TIME += (ed - st)
+    # # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+    # print(f'transpiled qc depth: {transpiled_circuit.depth()}')
 
 
-    # run job
-    shots = 10000
-    st = time.time()
-    job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
-    ed = time.time()
+    # # run job
+    # shots = 10000
+    # st = time.time()
+    # job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
+    # ed = time.time()
 
-    print(f'run job spends: {ed - st} sec')
-    TOTAL_TIME += (ed - st)
-    # Get the results and display them
+    # # print(f'run job spends: {ed - st} sec')
+    # TOTAL_TIME += (ed - st)
+    # # Get the results and display them
     # exp_result = job.result()
     # exp_counts = exp_result.get_counts()
     

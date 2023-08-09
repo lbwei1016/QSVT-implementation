@@ -1,7 +1,7 @@
 N = 8
 set_degree = 0
-time: 0.004265785217285156
-generate matrix time spent: 0.004285097122192383 sec
+time: 0.004618644714355469
+generate matrix time spent: 0.004633188247680664 sec
 ==================================
 A:
 [[-0.00128538 -0.00175805 -0.00638468 ... -0.00138803 -0.00455509
@@ -18,19 +18,19 @@ A:
  [-0.00175805 -0.00638468  0.00410801 ... -0.00455509 -0.00020002
   -0.00128538]]
 calculating condition number...
-time spent for calculating condition number: 0.012121438980102539 sec
+time spent for calculating condition number: 0.012691020965576172 sec
 kappa: 79.15594034690965
 deg: 121
-QSVT spends: 0.20403671264648438 sec
-prepare circuit spends: 0.20420289039611816 sec
+QSVT spends: 0.21150875091552734 sec
+prepare circuit spends: 0.2116103172302246 sec
 ==================================
-prepare state snapshot spends: 0.13051795959472656 sec
+prepare state snapshot spends: 0.13205409049987793 sec
 number of qubits: 10
 post-measurement state: Statevector([-0.06566634-7.75493804e-20j,  0.02724957-2.19487267e-18j,
               0.04589014+8.00855548e-20j, ...,  0.        +0.00000000e+00j,
               0.        +0.00000000e+00j,  0.        +0.00000000e+00j],
             dims=(2, 2, 2, 2, 2, 2, 2, 2, 2, 2))
-post-selection spends: 0.0034551620483398438 sec
+post-selection spends: 0.0017333030700683594 sec
 res: [-0.01770597 -0.05512258 -0.02141012  0.00356608 -0.11875553 -0.0671911
  -0.05015506  0.08157019  0.03373003 -0.04556105 -0.05274241 -0.13852934
  -0.11589486  0.03539832  0.00550179 -0.07866076  0.0049232  -0.07741078
@@ -74,13 +74,12 @@ res: [-0.01770597 -0.05512258 -0.02141012  0.00356608 -0.11875553 -0.0671911
  -0.05593378  0.02547766  0.02000444 -0.02448859 -0.07398103 -0.07881584
  -0.03456148 -0.0291563  -0.02516694 -0.11218177 -0.0596603  -0.10321814
  -0.0487058   0.01168263 -0.00473263  0.00249444]
-Classically solving Ax=b time spent: 0.0013573169708251953 sec
+Classically solving Ax=b time spent: 0.022109508514404297 sec
 ==================================
 kappa: 79.15594034690965
 total_variation (exact): 0.5235268715869992
 ==================================
 qc depth: 486
-transpilation spends: 0.7864465713500977 sec
+transpilation spends: 1.0886287689208984 sec
 transpiled qc depth: 727
-run job spends: 11.52429986000061 sec
-total execution time (exclude snapshot): 12.514949321746826 sec
+total execution time (exclude snapshot): 2.3888678550720215 sec

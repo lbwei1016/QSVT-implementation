@@ -1,7 +1,7 @@
 N = 9
 set_degree = 0
-time: 0.008445024490356445
-generate matrix time spent: 0.008462667465209961 sec
+time: 0.00915217399597168
+generate matrix time spent: 0.009166955947875977 sec
 ==================================
 A:
 [[-0.0006392   0.00087425 -0.00317501 ...  0.00275149 -0.00238668
@@ -18,19 +18,19 @@ A:
  [ 0.00087425 -0.00317501  0.00204285 ... -0.00238668 -0.00293017
   -0.0006392 ]]
 calculating condition number...
-time spent for calculating condition number: 0.06085610389709473 sec
+time spent for calculating condition number: 0.05097007751464844 sec
 kappa: 34.27889705792391
 deg: 121
-QSVT spends: 0.8788533210754395 sec
-prepare circuit spends: 0.8793320655822754 sec
+QSVT spends: 0.8692936897277832 sec
+prepare circuit spends: 0.8697633743286133 sec
 ==================================
-prepare state snapshot spends: 0.18319201469421387 sec
+prepare state snapshot spends: 0.18485212326049805 sec
 number of qubits: 11
 post-measurement state: Statevector([ 0.00555635+3.10196031e-20j, -0.03564364+8.91197851e-19j,
               0.0289714 -6.04396690e-19j, ...,  0.        +0.00000000e+00j,
               0.        +0.00000000e+00j,  0.        +0.00000000e+00j],
             dims=(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2))
-post-selection spends: 0.0034189224243164062 sec
+post-selection spends: 0.0034024715423583984 sec
 res: [ 1.67114621e-02  8.64553261e-02 -1.85592306e-02 -5.71684331e-03
   1.05863773e-02  8.87606883e-02 -4.65040050e-04 -2.48695705e-02
   4.15026160e-02  1.62799597e-02  2.13471873e-02 -2.03691320e-02
@@ -159,13 +159,12 @@ res: [ 1.67114621e-02  8.64553261e-02 -1.85592306e-02 -5.71684331e-03
   2.53277248e-02 -7.49017044e-03 -9.33332348e-02 -1.46909759e-02
   1.79646963e-02  6.17297196e-02  3.63098036e-03  6.45815255e-02
  -1.17673258e-02  4.22869594e-03 -1.21306534e-02 -6.37468830e-02]
-Classically solving Ax=b time spent: 0.006714344024658203 sec
+Classically solving Ax=b time spent: 0.006666660308837891 sec
 ==================================
 kappa: 34.27889705792391
 total_variation (exact): 0.5057704183177569
 ==================================
 qc depth: 486
-transpilation spends: 1.0662429332733154 sec
+transpilation spends: 0.7748308181762695 sec
 transpiled qc depth: 727
-run job spends: 181.7575421333313 sec
-total execution time (exclude snapshot): 183.7031171321869 sec
+total execution time (exclude snapshot): 2.4194250106811523 sec
