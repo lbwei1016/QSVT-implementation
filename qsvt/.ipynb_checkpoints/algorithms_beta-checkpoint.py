@@ -383,7 +383,7 @@ def linear_solver(
             file = './qsvt/inv2501.txt'
         elif set_degree == 3:
             file = './qsvt/inv3001.txt'
-        else::
+        else:
             file = './qsvt/inv_k150_d1001.txt'
 
         with open(file, 'r') as f:

@@ -180,14 +180,14 @@ def exec():
     # qc.add_register(cr)
     # qc.measure(measure_qubits, cr)
     print('==================================')
-    qc.measure_all()
-    print(f'qc depth: {qc.depth()}')
+    # qc.measure_all()
+    # print(f'qc depth: {qc.depth()}')
 
     # # It seems that even if 'GPU' is specified, GPU is not used at all.
     # # Since QSVT involves large multi-qubit gates (block-encoding), "extended_stabilizer" is not efficient.
     # # sim = AerSimulator(method='extended_stabilizer')
-    # # sim = AerSimulator(method='statevector')
-    # sim = AerSimulator(method='density_matrix')
+    # sim = AerSimulator(method='statevector')
+    # # sim = AerSimulator(method='density_matrix')
     # # sim = AerSimulator(method='statevector', device='GPU')
 
     # st = time.time()
@@ -199,18 +199,19 @@ def exec():
     # # transpiled_circuit = transpile(qc, sim, optimization_level=3)
     # print(f'transpiled qc depth: {transpiled_circuit.depth()}')
 
-
     # # run job
     # shots = 10000
     # st = time.time()
     # job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
-    # ed = time.time()
 
-    # # print(f'run job spends: {ed - st} sec')
-    # TOTAL_TIME += (ed - st)
     # # Get the results and display them
     # exp_result = job.result()
     # exp_counts = exp_result.get_counts()
+    # ed = time.time()
+    # TOTAL_TIME += (ed - st)
+    # print(f'run job spends: {ed - st} sec')
+    
+    
     
     
     # plot_histogram(exp_counts)
