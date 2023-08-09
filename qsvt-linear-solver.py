@@ -91,69 +91,69 @@ def exec():
     # st = time.time()
     # kappa = np.linalg.cond(A)
     # ed = time.time()
-    # print(f'time spent for calculating condition number: {ed - st} sec')
-    # print(f'kappa: {kappa}')
+    # # print(f'time spent for calculating condition number: {ed - st} sec')
+    # # print(f'kappa: {kappa}')
 
-    # W, S, Vd = np.linalg.svd(A)
-    # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
+    # # W, S, Vd = np.linalg.svd(A)
+    # # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
-    st = time.time()
-    if not AA_On:
-        qc = linear_solver(A, set_degree=set_degree)
-    else:
-        qc = linear_solver(A, set_degree=set_degree, amplify='AA')
-    # qc = linear_solver(A, eps=0.01, set_kappa=True)
-    # qc = linear_solver(A, set_kappa=True)
-    # qc = linear_solver(A, set_kappa=True, amplify='sign')
-    # qc = linear_solver(A, amplify='sign')
-    # qc = linear_solver(A, real_only=False)
-    # qc = linear_solver(A, amplify='chebyshev')
-    # qc = linear_solver(A, amplify='sign')
-    # qc = linear_solver(A, amplify='AA')
-    ed = time.time()
-    TOTAL_TIME += (ed - st)
-    print(f'prepare circuit spends: {ed - st} sec')
+    # st = time.time()
+    # if not AA_On:
+    #     qc = linear_solver(A, set_degree=set_degree)
+    # else:
+    #     qc = linear_solver(A, set_degree=set_degree, amplify='AA')
+    # # qc = linear_solver(A, eps=0.01, set_kappa=True)
+    # # qc = linear_solver(A, set_kappa=True)
+    # # qc = linear_solver(A, set_kappa=True, amplify='sign')
+    # # qc = linear_solver(A, amplify='sign')
+    # # qc = linear_solver(A, real_only=False)
+    # # qc = linear_solver(A, amplify='chebyshev')
+    # # qc = linear_solver(A, amplify='sign')
+    # # qc = linear_solver(A, amplify='AA')
+    # ed = time.time()
+    # TOTAL_TIME += (ed - st)
+    # print(f'prepare circuit spends: {ed - st} sec')
 
-    # print(f'circuit depth: {qc.depth()}')
-    # qc.draw('mpl')
+    # # print(f'circuit depth: {qc.depth()}')
+    # # qc.draw('mpl')
 
-    print('==================================')
+    # print('==================================')
 
-    st = time.time()
-    state = Statevector(qc)
-    ed = time.time()
-    print(f'prepare state snapshot spends: {ed - st} sec')
+    # st = time.time()
+    # state = Statevector(qc)
+    # ed = time.time()
+    # print(f'prepare state snapshot spends: {ed - st} sec')
 
-    n = qc.num_qubits
-    print(f'number of qubits: {n}')
+    # n = qc.num_qubits
+    # print(f'number of qubits: {n}')
 
-    # for AA or not
-    if AA_On:
-        measure_qubits = [n - 3, n - 2]
-    else:
-        measure_qubits = [n - 2, n - 1]
+    # # for AA or not
+    # if AA_On:
+    #     measure_qubits = [n - 3, n - 2]
+    # else:
+    #     measure_qubits = [n - 2, n - 1]
 
-    exp_outcome = "00"
+    # exp_outcome = "00"
 
-    # for no AA and no real_only
-    # measure_qubits = [n - 1]
-    # exp_outcome = "0"
+    # # for no AA and no real_only
+    # # measure_qubits = [n - 1]
+    # # exp_outcome = "0"
 
-    st = time.time()
-    while True:
-        outcome, mstate = state.measure(measure_qubits)
-        if outcome == exp_outcome: break
-    ed = time.time()
-    print(f'post-measurement state: {mstate}')
-    print(f'post-selection spends: {ed - st} sec')
+    # st = time.time()
+    # while True:
+    #     outcome, mstate = state.measure(measure_qubits)
+    #     if outcome == exp_outcome: break
+    # ed = time.time()
+    # print(f'post-measurement state: {mstate}')
+    # print(f'post-selection spends: {ed - st} sec')
 
     # for AA: 3 ancilla qubits
     st = time.time()
     if AA_On:
-        res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
+        res = np.linalg.solve(A, np.array([1] + [0] * (2 ** N - 1)))
     else:
         # for no AA: 2 ancilla qubits
-        res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
+        res = np.linalg.solve(A, np.array([1] + [0] * (2 ** N - 1)))
 
     # for no AA and no real_only: 1 ancilla qubits
     # res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 1) - 1)))
