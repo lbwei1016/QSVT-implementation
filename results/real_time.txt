@@ -1,6 +1,8 @@
 [poly degree = 121]
     N=8: 17s
-    N=9: 3m28s
+    N=9: 2m21s
     N=10: 16m22s
     N=11: 1h5m59s
     N=12: 3h57m27s (not finished)
+[poly degree = 601]
+    N=9: 54m16s

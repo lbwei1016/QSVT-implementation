@@ -1,5 +1,7 @@
 (This is a rough record of memory consumption, monitored by `top`.)
 [poly degree = 121]
+    N=9: 16.2g / 7.9g
+    N=10: 34.9g / 29.0g
 [poly degree = 601]
         Virtual Mem / Mem
-    N=9: 56.2g / 38.0g (重跑!)
+    N=9: 56.2g / 38.0g
