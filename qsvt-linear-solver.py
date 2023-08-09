@@ -11,7 +11,7 @@ from qsvt.helper import total_variation, gen_random_matrix
 
 from qiskit import transpile
 from qiskit_aer import AerSimulator
-#from qiskit.visualization import plot_histogram
+from qiskit.visualization import plot_histogram
 
 import time
 import getopt, sys
@@ -87,15 +87,15 @@ def exec():
     A /= A_norm
     print(f'A:\n{A}')
 
-    print(f'calculating condition number...')
-    st = time.time()
-    kappa = np.linalg.cond(A)
-    ed = time.time()
-    print(f'time spent for calculating condition number: {ed - st} sec')
-    print(f'kappa: {kappa}')
+    # print(f'calculating condition number...')
+    # st = time.time()
+    # kappa = np.linalg.cond(A)
+    # ed = time.time()
+    # print(f'time spent for calculating condition number: {ed - st} sec')
+    # print(f'kappa: {kappa}')
 
-    W, S, Vd = np.linalg.svd(A)
-    print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
+    # W, S, Vd = np.linalg.svd(A)
+    # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
     st = time.time()
     if not AA_On:
@@ -175,7 +175,56 @@ def exec():
     print(f'kappa: {kappa}')
     print(f'total_variation (exact): {total_variation(P, Q)}')
 
+    print('==================================')
 
+###########################################################################################
+    st = time.time()
+    state = Statevector(qc)
+    P = np.array([np.linalg.norm(x)**2 for x in state])
+    shots = 10000
+    # counts = {}
+    
+    # print(len(state), len(list(range(2 ** N))))
+    a = np.random.choice(a=list(range(2 ** n)), p=P, size=shots)
+    a = np.sort(a)
+    unique_elements, counts = np.unique(a, return_counts=True)
+    counts = dict(zip(unique_elements, counts))
+    # print(counts)
+    # plot_histogram(counts)
+
+    ed = time.time()
+    print(f'sampling time: {ed - st} sec')
+
+    
+
+    st = time.time()
+    SIZE = 2 ** N
+    valid_count = np.zeros(shape=(SIZE))
+    tmp = 0
+    for data in counts:
+        # tmp += counts[data]
+        # print(f'data: {data[:]}')
+        if data < SIZE:
+            tmp += counts[data]
+            # print(int(data[2:], base=2))
+            valid_count[int(data)] = counts[data]
+    valid_count /= shots
+    # valid_count /= np.linalg.norm(valid_count)
+    valid_count /= np.sum(valid_count)
+    print(f'tmp: {tmp}')
+    print(f'valid_count: {valid_count}; sum: {np.sum(valid_count)}')
+
+    # Q = np.array([x ** 2 for x in res])
+    tot_var = total_variation(valid_count, Q)
+    ed = time.time()
+    print(f'total var. (exp) time spent: {ed - st}')
+    #print(f'Q: {Q}')
+
+    print(f'kappa: {kappa}')
+    print(f'total_variation (exp): {tot_var}')
+
+
+###############################################################################
     # cr = ClassicalRegister(len(measure_qubits))
     # qc.add_register(cr)
     # qc.measure(measure_qubits, cr)
@@ -213,7 +262,7 @@ def exec():
     
     
     
-    
+########################################################################
     # plot_histogram(exp_counts)
 
     # Calculate total variance
