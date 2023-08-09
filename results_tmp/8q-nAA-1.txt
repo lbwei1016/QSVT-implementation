@@ -1,7 +1,7 @@
 N = 8
-set_degree = 0
-time: 0.005014657974243164
-generate matrix time spent: 0.005032539367675781 sec
+set_degree = 1
+time: 0.005332469940185547
+generate matrix time spent: 0.005349397659301758 sec
 ==================================
 A:
 [[-0.00128538 -0.00175805 -0.00638468 ... -0.00138803 -0.00455509
@@ -18,19 +18,19 @@ A:
  [-0.00175805 -0.00638468  0.00410801 ... -0.00455509 -0.00020002
   -0.00128538]]
 calculating condition number...
-time spent for calculating condition number: 0.015012025833129883 sec
+time spent for calculating condition number: 0.013498306274414062 sec
 kappa: 79.15594034690965
-deg: 121
-QSVT spends: 0.21249961853027344 sec
-prepare circuit spends: 0.21266818046569824 sec
+deg: 601
+QSVT spends: 0.339813232421875 sec
+prepare circuit spends: 0.34093523025512695 sec
 ==================================
-prepare state snapshot spends: 0.1387801170349121 sec
+prepare state snapshot spends: 0.6224002838134766 sec
 number of qubits: 10
-post-measurement state: Statevector([-0.06566634-7.75493804e-20j,  0.02724957-2.19487267e-18j,
-              0.04589014+8.00855548e-20j, ...,  0.        +0.00000000e+00j,
+post-measurement state: Statevector([-0.09901946+2.16929937e-18j,  0.01003898-6.49773440e-19j,
+             -0.00638428-3.84526803e-19j, ...,  0.        +0.00000000e+00j,
               0.        +0.00000000e+00j,  0.        +0.00000000e+00j],
             dims=(2, 2, 2, 2, 2, 2, 2, 2, 2, 2))
-post-selection spends: 0.0017590522766113281 sec
+post-selection spends: 0.006113290786743164 sec
 res: [-0.01770597 -0.05512258 -0.02141012  0.00356608 -0.11875553 -0.0671911
  -0.05015506  0.08157019  0.03373003 -0.04556105 -0.05274241 -0.13852934
  -0.11589486  0.03539832  0.00550179 -0.07866076  0.0049232  -0.07741078
@@ -74,13 +74,13 @@ res: [-0.01770597 -0.05512258 -0.02141012  0.00356608 -0.11875553 -0.0671911
  -0.05593378  0.02547766  0.02000444 -0.02448859 -0.07398103 -0.07881584
  -0.03456148 -0.0291563  -0.02516694 -0.11218177 -0.0596603  -0.10321814
  -0.0487058   0.01168263 -0.00473263  0.00249444]
-Classically solving Ax=b time spent: 0.0020754337310791016 sec
+Classically solving Ax=b time spent: 0.0016012191772460938 sec
 ==================================
 kappa: 79.15594034690965
-total_variation (exact): 0.5235268715869992
+total_variation (exact): 0.47614980130335893
 ==================================
-qc depth: 486
-transpilation spends: 0.8798031806945801 sec
-transpiled qc depth: 727
-run job spends: 13.50987696647644 sec
-total execution time (exclude snapshot): 14.602348327636719 sec
+qc depth: 2406
+transpilation spends: 1.9398269653320312 sec
+transpiled qc depth: 3607
+run job spends: 66.27285289764404 sec
+total execution time (exclude snapshot): 68.5536150932312 sec
