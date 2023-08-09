@@ -1,0 +1,268 @@
+N = 2
+set_degree = 0
+time: 0.00032258033752441406
+generate matrix time spent: 0.00039958953857421875 sec
+==================================
+A:
+[[-0.08137106  0.11129341 -0.40418165 -0.26005714]
+ [-0.26005714 -0.08137106  0.11129341 -0.40418165]
+ [-0.40418165 -0.26005714 -0.08137106  0.11129341]
+ [ 0.11129341 -0.40418165 -0.26005714 -0.08137106]]
+calculating condition number...
+time spent for calculating condition number: 0.00023174285888671875 sec
+kappa: 1.8834239777011659
+deg: 121
+QSVT spends: 0.09782052040100098 sec
+prepare circuit spends: 0.09802913665771484 sec
+==================================
+prepare state snapshot spends: 0.11605262756347656 sec
+number of qubits: 4
+post-measurement state: Statevector([ 0.21243623+3.80507830e-17j, -0.50399497-1.54666041e-16j,
+              0.81541042+2.82797867e-17j,  0.18964645-3.02274793e-17j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j,
+              0.        +0.00000000e+00j,  0.        +0.00000000e+00j],
+            dims=(2, 2, 2, 2))
+post-selection spends: 0.051224708557128906 sec
+res: [-0.21242113  0.50423068 -0.81533857 -0.18934547]
+Classically solving Ax=b time spent: 0.00015211105346679688 sec
+==================================
+kappa: 1.8834239777011659
+total_variation (exact): 0.00023764842040387146
+==================================
+qc depth: 486
+transpilation spends: 1.5309135913848877 sec
+transpiled qc depth: 727
+run job spends: 0.015842199325561523 sec
+total execution time (exclude snapshot): 1.644784927368164 sec
+Filename: qsvt-linear-solver.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    21    166.5 MiB    166.5 MiB           1   @memory_profiler.profile
+    22                                         def exec():
+    23                                         
+    24    166.5 MiB      0.0 MiB           1       TOTAL_TIME = 0
+    25    166.5 MiB      0.0 MiB           1       AA_On = False
+    26    166.5 MiB      0.0 MiB           1       set_degree = 0
+    27                                             # matrix size exponent
+    28    166.5 MiB      0.0 MiB           1       N = 1
+    29                                         
+    30                                         
+    31                                             # Remove 1st argument from the
+    32                                             # list of command line arguments
+    33    166.5 MiB      0.0 MiB           1       argumentList = sys.argv[1:]
+    34                                         
+    35                                             # Options
+    36    166.5 MiB      0.0 MiB           1       options = "hN:ad:"
+    37                                         
+    38                                             # Long options
+    39    166.5 MiB      0.0 MiB           1       long_options = ["help", "Num_of_qubits_for_matrix=", "AA", "set_degree"]
+    40                                         
+    41    166.5 MiB      0.0 MiB           1       try:
+    42                                                 # Parsing argument
+    43    166.5 MiB      0.0 MiB           1           arguments, values = getopt.getopt(argumentList, options, long_options)
+    44                                                 
+    45                                                 # checking each argument
+    46    166.5 MiB      0.0 MiB           3           for currentArgument, currentValue in arguments:
+    47                                         
+    48    166.5 MiB      0.0 MiB           2               if currentArgument in ("-h", "--help"):
+    49                                                         help_msg = """
+    50                                             -h: show help
+    51                                             -N <Number of qubits for matrix>: specify matrix size
+    52                                             -a: Use AA
+    53                                                         """
+    54                                                         print(help_msg)
+    55                                                         
+    56    166.5 MiB      0.0 MiB           2               elif currentArgument in ("-N", "--Num_of_qubits_for_matrix"):
+    57    166.5 MiB      0.0 MiB           1                   N = int(currentValue)
+    58    166.5 MiB      0.0 MiB           1                   print(f'N = {currentValue}')
+    59                                                         
+    60    166.5 MiB      0.0 MiB           1               elif currentArgument in ("-a", "--AA"):
+    61                                                         AA_On = True
+    62                                                         print('AA is on')
+    63    166.5 MiB      0.0 MiB           1               elif currentArgument in ("-d", "--set_degree"):
+    64    166.5 MiB      0.0 MiB           1                   set_degree = int(currentValue)
+    65    166.5 MiB      0.0 MiB           1                   print(f"set_degree = {set_degree}")
+    66                                                         
+    67                                             except getopt.error as err:
+    68                                                 # output error, and return with an error code
+    69                                                 print (str(err))
+    70                                         
+    71                                             #########################################################################
+    72                                         
+    73                                             #N = 9
+    74    166.5 MiB      0.0 MiB           1       st = time.time()
+    75    166.5 MiB      0.0 MiB           1       A = gen_random_matrix(50-1e-9, 2**(N), N)
+    76    166.5 MiB      0.0 MiB           1       ed = time.time()
+    77    166.5 MiB      0.0 MiB           1       print(f'generate matrix time spent: {ed - st} sec')
+    78    166.5 MiB      0.0 MiB           1       print('==================================')
+    79                                         
+    80                                         
+    81                                             # A = np.array([
+    82                                             #     [1, -1/3],
+    83                                             #     [-1/3, 1]
+    84                                             # ])
+    85                                         
+    86    166.5 MiB      0.0 MiB           1       A_norm = np.linalg.norm(A)
+    87    166.5 MiB      0.0 MiB           1       A /= A_norm
+    88    166.5 MiB      0.0 MiB           1       print(f'A:\n{A}')
+    89                                         
+    90    166.5 MiB      0.0 MiB           1       print(f'calculating condition number...')
+    91    166.5 MiB      0.0 MiB           1       st = time.time()
+    92    166.5 MiB      0.0 MiB           1       kappa = np.linalg.cond(A)
+    93    166.5 MiB      0.0 MiB           1       ed = time.time()
+    94    166.5 MiB      0.0 MiB           1       print(f'time spent for calculating condition number: {ed - st} sec')
+    95    166.5 MiB      0.0 MiB           1       print(f'kappa: {kappa}')
+    96                                         
+    97                                             # W, S, Vd = np.linalg.svd(A)
+    98                                             # print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
+    99                                         
+   100    166.5 MiB      0.0 MiB           1       st = time.time()
+   101    166.5 MiB      0.0 MiB           1       if not AA_On:
+   102    177.4 MiB     10.9 MiB           1           qc = linear_solver(A, set_degree=set_degree)
+   103                                             else:
+   104                                                 qc = linear_solver(A, set_degree=set_degree, amplify='AA')
+   105                                             # qc = linear_solver(A, eps=0.01, set_kappa=True)
+   106                                             # qc = linear_solver(A, set_kappa=True)
+   107                                             # qc = linear_solver(A, set_kappa=True, amplify='sign')
+   108                                             # qc = linear_solver(A, amplify='sign')
+   109                                             # qc = linear_solver(A, real_only=False)
+   110                                             # qc = linear_solver(A, amplify='chebyshev')
+   111                                             # qc = linear_solver(A, amplify='sign')
+   112                                             # qc = linear_solver(A, amplify='AA')
+   113    177.4 MiB      0.0 MiB           1       ed = time.time()
+   114    177.4 MiB      0.0 MiB           1       TOTAL_TIME += (ed - st)
+   115    177.4 MiB      0.0 MiB           1       print(f'prepare circuit spends: {ed - st} sec')
+   116                                         
+   117                                             # print(f'circuit depth: {qc.depth()}')
+   118                                             # qc.draw('mpl')
+   119                                         
+   120    177.4 MiB      0.0 MiB           1       print('==================================')
+   121                                         
+   122    177.4 MiB      0.0 MiB           1       st = time.time()
+   123    177.6 MiB      0.3 MiB           1       state = Statevector(qc)
+   124    177.6 MiB      0.0 MiB           1       ed = time.time()
+   125    177.6 MiB      0.0 MiB           1       print(f'prepare state snapshot spends: {ed - st} sec')
+   126                                         
+   127    177.6 MiB      0.0 MiB           1       n = qc.num_qubits
+   128    177.6 MiB      0.0 MiB           1       print(f'number of qubits: {n}')
+   129                                         
+   130                                             # for AA or not
+   131    177.6 MiB      0.0 MiB           1       if AA_On:
+   132                                                 measure_qubits = [n - 3, n - 2]
+   133                                             else:
+   134    177.6 MiB      0.0 MiB           1           measure_qubits = [n - 2, n - 1]
+   135                                         
+   136    177.6 MiB      0.0 MiB           1       exp_outcome = "00"
+   137                                         
+   138                                             # for no AA and no real_only
+   139                                             # measure_qubits = [n - 1]
+   140                                             # exp_outcome = "0"
+   141                                         
+   142    177.6 MiB      0.0 MiB           1       st = time.time()
+   143    177.6 MiB      0.0 MiB          66       while True:
+   144    177.6 MiB      0.0 MiB          66           outcome, mstate = state.measure(measure_qubits)
+   145    177.6 MiB      0.0 MiB          66           if outcome == exp_outcome: break
+   146    177.6 MiB      0.0 MiB           1       ed = time.time()
+   147    177.6 MiB      0.0 MiB           1       print(f'post-measurement state: {mstate}')
+   148    177.6 MiB      0.0 MiB           1       print(f'post-selection spends: {ed - st} sec')
+   149                                         
+   150                                             # for AA: 3 ancilla qubits
+   151    177.6 MiB      0.0 MiB           1       st = time.time()
+   152    177.6 MiB      0.0 MiB           1       if AA_On:
+   153                                                 res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 3) - 1)))
+   154                                             else:
+   155                                                 # for no AA: 2 ancilla qubits
+   156    177.6 MiB      0.0 MiB           1           res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 2) - 1)))
+   157                                         
+   158                                             # for no AA and no real_only: 1 ancilla qubits
+   159                                             # res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 1) - 1)))
+   160    177.6 MiB      0.0 MiB           1       ed = time.time()
+   161    177.6 MiB      0.0 MiB           1       res /= np.linalg.norm(res)
+   162    177.6 MiB      0.0 MiB           1       print(f'res: {res}')
+   163    177.6 MiB      0.0 MiB           1       print(f'Classically solving Ax=b time spent: {ed - st} sec')
+   164                                         
+   165                                         
+   166                                             # Calculate total variation
+   167    177.6 MiB      0.0 MiB           1       print('==================================')
+   168    177.6 MiB      0.0 MiB           7       P = np.array([mstate[i] for i in range(2 ** N)])
+   169    177.6 MiB      0.0 MiB           7       P = np.array([np.linalg.norm(x)**2 for x in P])
+   170                                             #print(f'P: {P}')
+   171                                             # res = [-0.63012604,  0.070014,    0.070014,    0.77015405]
+   172    177.6 MiB      0.0 MiB           7       Q = np.array([x ** 2 for x in res])
+   173                                             #print(f'Q: {Q}')
+   174                                         
+   175    177.6 MiB      0.0 MiB           1       print(f'kappa: {kappa}')
+   176    177.6 MiB      0.0 MiB           1       print(f'total_variation (exact): {total_variation(P, Q)}')
+   177                                         
+   178                                         
+   179                                             # cr = ClassicalRegister(len(measure_qubits))
+   180                                             # qc.add_register(cr)
+   181                                             # qc.measure(measure_qubits, cr)
+   182    177.6 MiB      0.0 MiB           1       print('==================================')
+   183    177.6 MiB      0.0 MiB           1       qc.measure_all()
+   184    177.6 MiB      0.0 MiB           1       print(f'qc depth: {qc.depth()}')
+   185                                         
+   186                                             # It seems that even if 'GPU' is specified, GPU is not used at all.
+   187                                             # Since QSVT involves large multi-qubit gates (block-encoding), "extended_stabilizer" is not efficient.
+   188                                             # sim = AerSimulator(method='extended_stabilizer')
+   189    178.7 MiB      1.0 MiB           1       sim = AerSimulator(method='statevector')
+   190                                             # sim = AerSimulator(method='statevector', device='GPU')
+   191                                         
+   192    178.7 MiB      0.0 MiB           1       st = time.time()
+   193    192.6 MiB     13.9 MiB           1       transpiled_circuit = transpile(qc, sim)
+   194                                             # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+   195    192.6 MiB      0.0 MiB           1       ed = time.time()
+   196    192.6 MiB      0.0 MiB           1       print(f'transpilation spends: {ed - st} sec')
+   197    192.6 MiB      0.0 MiB           1       TOTAL_TIME += (ed - st)
+   198                                             # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+   199    192.6 MiB      0.0 MiB           1       print(f'transpiled qc depth: {transpiled_circuit.depth()}')
+   200                                         
+   201                                         
+   202                                             # run job
+   203    192.6 MiB      0.0 MiB           1       shots = 10000
+   204    192.6 MiB      0.0 MiB           1       st = time.time()
+   205    194.7 MiB      2.1 MiB           1       job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
+   206    194.7 MiB      0.0 MiB           1       ed = time.time()
+   207                                         
+   208    194.7 MiB      0.0 MiB           1       print(f'run job spends: {ed - st} sec')
+   209    194.7 MiB      0.0 MiB           1       TOTAL_TIME += (ed - st)
+   210                                             # Get the results and display them
+   211                                             # exp_result = job.result()
+   212                                             # exp_counts = exp_result.get_counts()
+   213                                             
+   214                                             
+   215                                             # plot_histogram(exp_counts)
+   216                                         
+   217                                             # Calculate total variance
+   218                                             # experiment count
+   219                                             #print(f'exp_counts: {exp_counts}')
+   220                                         
+   221                                             # st = time.time()
+   222                                             # valid_count = np.zeros(shape=(2 ** N))
+   223                                             # for data in exp_counts:
+   224                                             #     # print(f'data: {data[:]}')
+   225                                             #     if data[:2] == '00':
+   226                                             #         # print(int(data[2:], base=2))
+   227                                             #         valid_count[int(data[2:], base=2)] = exp_counts[data]
+   228                                             # valid_count /= shots
+   229                                             # valid_count /= np.linalg.norm(valid_count)
+   230                                             # #print(f'valid_count: {valid_count}')
+   231                                         
+   232                                             # Q = np.array([x ** 2 for x in res])
+   233                                             # tot_var = total_variation(valid_count, Q)
+   234                                             # ed = time.time()
+   235                                             # print(f'total var. (exact) time spent: {ed - st}')
+   236                                             # #print(f'Q: {Q}')
+   237                                         
+   238                                             # print(f'kappa: {kappa}')
+   239                                             # print(f'total_variation (exp): {tot_var}')
+   240                                             # print('==================================')
+   241                                         
+   242    194.7 MiB      0.0 MiB           1       print(f'total execution time (exclude snapshot): {TOTAL_TIME} sec')
+
+
