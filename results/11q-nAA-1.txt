@@ -1,7 +1,7 @@
 N = 11
-set_degree = 0
-time: 0.059326171875
-generate matrix time spent: 0.05934333801269531 sec
+set_degree = 1
+time: 0.05246400833129883
+generate matrix time spent: 0.05247950553894043 sec
 ==================================
 A:
 [[ 1.61668318e-04 -2.21118137e-04  8.03029539e-04 ...  5.41869453e-04
@@ -18,27 +18,27 @@ A:
  [-2.21118137e-04  8.03029539e-04  5.16682447e-04 ... -7.81210212e-04
   -1.72729492e-04  1.61668318e-04]]
 calculating condition number...
-time spent for calculating condition number: 0.9708297252655029 sec
+time spent for calculating condition number: 1.0091850757598877 sec
 kappa: 75.45554474050736
-deg: 121
-QSVT spends: 17.43706250190735 sec
-prepare circuit spends: 17.450559854507446 sec
+deg: 601
+QSVT spends: 17.676295280456543 sec
+prepare circuit spends: 17.698967456817627 sec
 ==================================
-prepare state snapshot spends: 1.9840424060821533 sec
+prepare state snapshot spends: 9.882602214813232 sec
 number of qubits: 13
-post-measurement state: Statevector([-0.00803902-2.10833430e-19j,  0.00566139-2.02780410e-19j,
-             -0.03444738-1.92925512e-19j, ...,  0.        +0.00000000e+00j,
+post-measurement state: Statevector([-0.01537158+5.78331106e-19j, -0.00832112-1.86159436e-19j,
+             -0.02399406+2.25567184e-19j, ...,  0.        +0.00000000e+00j,
               0.        +0.00000000e+00j,  0.        +0.00000000e+00j],
             dims=(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2))
-post-selection spends: 0.0031604766845703125 sec
+post-selection spends: 0.003962516784667969 sec
 res: [-0.01618048  0.00363715  0.0318753  ...  0.0287188  -0.00165737
  -0.02117067]
-Classically solving Ax=b time spent: 0.09298157691955566 sec
+Classically solving Ax=b time spent: 0.09645509719848633 sec
 ==================================
 kappa: 75.45554474050736
-total_variation (exact): 0.5450613489867535
+total_variation (exact): 0.5162857036416609
 ==================================
-qc depth: 486
-transpilation spends: 1.0448505878448486 sec
-transpiled qc depth: 727
-total execution time (exclude snapshot): 19.540261030197144 sec
+qc depth: 2406
+transpilation spends: 1.656275749206543 sec
+transpiled qc depth: 3607
+total execution time (exclude snapshot): 21.011518955230713 sec
