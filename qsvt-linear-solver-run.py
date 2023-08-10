@@ -75,12 +75,12 @@ print('==================================')
 
 A_norm = np.linalg.norm(A)
 A /= A_norm
-print(f'A:\n{A}')
+# print(f'A:\n{A}')
 
-print(f'calculating condition number...')
-st = time.time()
-kappa = np.linalg.cond(A)
-ed = time.time()
+# print(f'calculating condition number...')
+# st = time.time()
+# kappa = np.linalg.cond(A)
+# ed = time.time()
 # print(f'time spent for calculating condition number: {ed - st} sec')
 # print(f'kappa: {kappa}')
 
@@ -143,7 +143,7 @@ P = np.array([np.linalg.norm(mstate[i]) ** 2 for i in range(2 ** N)])
 # P = np.array([np.linalg.norm(x)**2 for x in P])
 Q = np.array([x ** 2 for x in res])
 
-print(f'kappa: {kappa}')
+# print(f'kappa: {kappa}')
 print(f'total_variation (exact): {total_variation(P, Q)}')
 
 print('==================================')
@@ -162,6 +162,7 @@ counts = dict(zip(unique_elements, counts))
 # plot_histogram(counts)
 
 ed = time.time()
+TOTAL_TIME += (ed - st)
 print(f'sampling time: {ed - st} sec')
 
 
