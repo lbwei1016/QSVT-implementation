@@ -152,7 +152,7 @@ print('==================================')
 st = time.time()
 state = Statevector(qc)
 P = np.array([np.linalg.norm(x)**2 for x in state])
-shots = 10000
+shots = 100000
 
 a = np.random.choice(a=list(range(2 ** n)), p=P, size=shots)
 a = np.sort(a)
@@ -179,7 +179,7 @@ valid_count /= shots
 # valid_count /= np.linalg.norm(valid_count)
 valid_count /= np.sum(valid_count)
 print(f'sucess ratio: {success / shots}')
-print(f'valid_count: {valid_count};\nsum (should = 1): {np.sum(valid_count)}')
+# print(f'valid_count: {valid_count};\nsum (should = 1): {np.sum(valid_count)}')
 
 tot_var = total_variation(valid_count, Q)
 ed = time.time()
