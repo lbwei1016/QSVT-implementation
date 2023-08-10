@@ -124,7 +124,7 @@ while True:
     outcome, mstate = state.measure(measure_qubits)
     if outcome == exp_outcome: break
 ed = time.time()
-print(f'post-measurement state: {mstate}')
+# print(f'post-measurement state: {mstate}')
 print(f'post-selection spends: {ed - st} sec')
 
 
@@ -133,7 +133,7 @@ res = np.linalg.solve(A, np.array([1] + [0] * (2 ** N - 1)))
 ed = time.time()
 res /= np.linalg.norm(res)
 
-print(f'res: {res}')
+# print(f'res: {res}')
 print(f'#### Classically solving Ax=b time spent: {ed - st} sec ####')
 
 

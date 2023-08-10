@@ -1,0 +1,21 @@
+N = 2
+set_degree = 2
+time: 0.00014090538024902344
+generate matrix time spent: 0.000148773193359375 sec
+==================================
+deg: 1501
+QSVT spends: 0.20105910301208496 sec
+prepare circuit spends: 0.20233607292175293 sec
+==================================
+prepare state snapshot spends: 0.3173847198486328 sec
+number of qubits: 4
+post-selection spends: 1.0912327766418457 sec
+#### Classically solving Ax=b time spent: 9.1552734375e-05 sec ####
+==================================
+total_variation (exact): 0.0008882980833505617
+==================================
+sampling time: 0.34288573265075684 sec
+sucess ratio: 4e-05
+total_variation (sample): 0.08522301521250221
+==================================
+total execution time (exclude snapshot): 0.5452218055725098 sec
