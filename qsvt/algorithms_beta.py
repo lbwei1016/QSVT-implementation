@@ -378,13 +378,11 @@ def linear_solver(
     else:
         Wx_seq = []
         if set_degree == 1:
-            file = './qsvt/inv601.txt'
+            file = './qsvt/inv_k50_d601.txt'
         elif set_degree == 2:
-            file = './qsvt/inv2501.txt'
-        elif set_degree == 3:
-            file = './qsvt/inv3001.txt'
-        else:
-            file = './qsvt/inv_k150_d1001.txt'
+            file = './qsvt/inv_k150_d1501.txt'
+        elif set_degree >= 3:
+            file = './qsvt/inv_k200_d2001.txt'
 
         with open(file, 'r') as f:
             Wx_seq = f.read().split('\n')
