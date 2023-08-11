@@ -1,8 +1,33 @@
 (This is a rough record of memory consumption, monitored by `top`.)
 [poly degree = 121]
-    N=9: 16.2g / 7.9g
+    N=9: 16.2g / 7.9g (statevector); 12.1g / 4.2g (MPS)
     N=10: 34.9g / 29.0g
+
 [poly degree = 601]
         Virtual Mem / Mem
     N=8: X / 5.0g
     N=9: 56.2g / 38.0g
+
+------------------------------------------------------------------------
+(Since no transpilation, memory usage is almost invariant of the degree of polynomial.)
+[poly degree = 121 (self-sampled)]
+    N=10: 1.1g / 0.6g
+    N=11: 2.6g / 2.2g
+    N=12: 8.8g / 8.4g
+    N=13: 38.1g / 35.0g
+
+[poly degree = 601 (self-sampled)]
+    N=11: 2.6g / 2.2g
+    N=12: 8.8g / 8.4g
+
+[poly degree = 1501 (self-sampled)]
+    N=11: 2.8g / 2.2g
+    N=12: 8.8g / 8.4g
+
+[poly degree = 2001 (self-sampled)]
+    N=11: 2.8g / 2.2g
+    N=12: 8.8g / 8.4g
+
+[poly degree = 5001 (self-sampled)]
+    N=11: 2.6g / 2.2g
+    N=12: 10.0g / 8.9g

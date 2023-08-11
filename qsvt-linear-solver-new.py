@@ -5,6 +5,8 @@ import numpy as np
 from qsvt.algorithms_beta import linear_solver
 from qsvt.helper import total_variation, gen_random_matrix
 
+from qiskit import transpile
+from qiskit_aer import AerSimulator
 from qiskit.visualization import plot_histogram
 
 import time
@@ -15,6 +17,7 @@ import getopt, sys
 TOTAL_TIME = 0
 AA_On = False
 set_degree = 0
+simulation_method = 'statevector'
 # matrix size exponent
 N = 1
 
@@ -24,7 +27,7 @@ N = 1
 argumentList = sys.argv[1:]
 
 # Options
-options = "hN:ad:"
+options = "hN:ad:s:"
 
 # Long options
 long_options = ["help", "Num_of_qubits_for_matrix=", "AA", "set_degree"]
@@ -54,10 +57,20 @@ try:
         elif currentArgument in ("-d", "--set_degree"):
             set_degree = int(currentValue)
             print(f"set_degree = {set_degree}")
-            
+        elif currentArgument in ("-s", "--simulation_method"):
+            if currentValue == 'm':
+                simulation_method = "matrix_product_state"
+            else:
+                simulation_method = "statevector"  
+            # simulation_method = currentValue
+            print(f'simulation_method = {simulation_method}')
+                
 except getopt.error as err:
     # output error, and return with an error code
     print (str(err))
+
+# print(f'simulation_method = {simulation_method}')
+
 
 #########################################################################
 
@@ -77,15 +90,6 @@ A_norm = np.linalg.norm(A)
 A /= A_norm
 # print(f'A:\n{A}')
 
-# print(f'calculating condition number...')
-# st = time.time()
-# kappa = np.linalg.cond(A)
-# ed = time.time()
-# print(f'time spent for calculating condition number: {ed - st} sec')
-# print(f'kappa: {kappa}')
-
-# W, S, Vd = np.linalg.svd(A)
-# print(f'SVD of normalized A:\n\tW:\n{W}\n\tS:\n{S}\n\tVd:\n{Vd}')
 
 st = time.time()
 if not AA_On:
@@ -99,13 +103,13 @@ print(f'prepare circuit spends: {ed - st} sec')
 
 
 
-
 print('==================================')
 
 st = time.time()
 state = Statevector(qc)
 ed = time.time()
-print(f'prepare state snapshot spends: {ed - st} sec')
+snap_time = ed - st
+print(f'prepare state snapshot spends: {snap_time} sec')
 
 n = qc.num_qubits
 print(f'number of qubits: {n}')
@@ -148,9 +152,9 @@ print(f'total_variation (exact): {total_variation(P, Q)}')
 
 print('==================================')
 
-###########################################################################################
+################################ Self-sampling ########################################################
 st = time.time()
-state = Statevector(qc)
+# state = Statevector(qc)
 P = np.array([np.linalg.norm(x)**2 for x in state])
 shots = 100000
 
@@ -163,9 +167,39 @@ counts = dict(zip(unique_elements, counts))
 
 ed = time.time()
 TOTAL_TIME += (ed - st)
-print(f'sampling time: {ed - st} sec')
+print(f'sampling time: {ed - st + snap_time} sec')
 
+################################ Simulation ######################################################
 
+# qc.measure_all()
+# print(f'qc depth: {qc.depth()}')
+
+# sim = AerSimulator(method=simulation_method)
+# # sim = AerSimulator(method='density_matrix')
+# # sim = AerSimulator(method='statevector', device='GPU')
+
+# st = time.time()
+# transpiled_circuit = transpile(qc, sim)
+# # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+# ed = time.time()
+# print(f'transpilation spends: {ed - st} sec')
+# TOTAL_TIME += (ed - st)
+# # transpiled_circuit = transpile(qc, sim, optimization_level=3)
+# print(f'transpiled qc depth: {transpiled_circuit.depth()}')
+
+# # run job
+# shots = 10000
+# st = time.time()
+# job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
+
+# # Get the results and display them
+# exp_result = job.result()
+# counts = exp_result.get_counts()
+# ed = time.time()
+# TOTAL_TIME += (ed - st)
+# print(f'run job spends: {ed - st} sec')
+
+#####################################################################################
 
 st = time.time()
 SIZE = 2 ** N

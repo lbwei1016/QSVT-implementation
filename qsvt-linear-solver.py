@@ -24,6 +24,7 @@ def exec():
     TOTAL_TIME = 0
     AA_On = False
     set_degree = 0
+    simulation_method = 'statevector'
     # matrix size exponent
     N = 1
 
@@ -33,7 +34,7 @@ def exec():
     argumentList = sys.argv[1:]
 
     # Options
-    options = "hN:ad:"
+    options = "hN:ad:s:"
 
     # Long options
     long_options = ["help", "Num_of_qubits_for_matrix=", "AA", "set_degree"]
@@ -63,6 +64,10 @@ def exec():
             elif currentArgument in ("-d", "--set_degree"):
                 set_degree = int(currentValue)
                 print(f"set_degree = {set_degree}")
+            elif currentArgument in ("-s", "--simulation_method"):
+                if 
+                simulation_method = 
+                print(f'simulation_method = {simulation_method}')
                 
     except getopt.error as err:
         # output error, and return with an error code
@@ -223,6 +228,7 @@ def exec():
     print(f'kappa: {kappa}')
     print(f'total_variation (exp): {tot_var}')
 
+    
 
 ###############################################################################
     # cr = ClassicalRegister(len(measure_qubits))

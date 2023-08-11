@@ -3,7 +3,7 @@
 START=$1
 END=$2
 
-for d in {0..3}
+for d in {1..4}
 do
     flag="1"
     for N in $(seq $START $END)
@@ -16,7 +16,7 @@ do
         # profile="./profiles_run/${filename}.prof"
 
         # time python3 -m cProfile -o "${profile}" qsvt-linear-solver-run.py -N ${N} -d ${d} > ${record}
-        time python3 qsvt-linear-solver-run.py -N ${N} -d ${d} > ${record}
+        time python3 qsvt-linear-solver-new.py -N ${N} -d ${d} > ${record}
 
         if [ ! -s "${record}" ];
         then
