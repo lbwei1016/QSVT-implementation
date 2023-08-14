@@ -1,13 +1,13 @@
-## QSVT Implementation
+# QSVT Implementation
 
 This repository consists of implementations of the main framework of Quantum Singular Value Transformation (QSVT), and some algorithms based on it.
 
-### Implemented Algorithms
-- [x] Amplitude amplification (search)
-- [x] Matrix Inversion (for solving Quantum Linear System Problem, QLSP)
-- [x] Phase estimation (simplified)
+## Implemented Algorithms
+- Amplitude amplification (search)
+- Matrix Inversion (for solving Quantum Linear System Problem, QLSP)
+- Phase estimation (simplified)
 
-### Notes on Repository Organization
+## Notes on Repository Organization
 
 - `experiments/`: contains some numerical experiment results of solving QLSP by QSVT (not organized yet)
 - `qsvt/`: 
