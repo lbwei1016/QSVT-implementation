@@ -4,7 +4,7 @@ This repository consists of implementations of the main framework of Quantum Sin
 
 ## Implemented Algorithms
 - Amplitude amplification (search)
-- Matrix Inversion (for solving Quantum Linear System Problem, QLSP)
+- Matrix inversion (for solving Quantum Linear System Problem, QLSP)
 - Phase estimation (simplified)
 
 ## Notes on Repository Organization
@@ -16,7 +16,7 @@ This repository consists of implementations of the main framework of Quantum Sin
   - `core.py`: core functions, including QSVT, block-encoding, angle convention convertion, etc.
   - `helper.py`: helper functions for polynomial coefficient finding, calculating total variation distance, generating random matrices, etc.
   - `inv_k*_d*.txt`: polynomial coefficients (approximating $1/x$)
-    - `k50`: condition number ($\kappa$)
+    - `k50`: condition number ($\kappa$) is $50$
     - `d601`: polynomial degree is $601$
 - `plot.ipynb`: plotting experiment results
 - `qsvt-aa.ipynb`: example for amplitude amplfication
