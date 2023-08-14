@@ -4,6 +4,7 @@ from qiskit.extensions import UnitaryGate
 
 import numpy as np
 
+# tolorence for the norm of the block-encoded matrix
 EPS = 1e-6
 
 
@@ -65,6 +66,10 @@ def block_encode(A: np.ndarray) -> np.ndarray:
             U: A block-encoding of "A", in the form given above.
         Note:
             We have A = (<0| \otimes I)U(|0> \otimes I).
+
+            This is not a efficient block-encoding. To efficiently block-encode a sparse matrix,
+            see https://www.youtube.com/watch?v=d3f3JRo0WUo&ab_channel=InstituteforPure%26AppliedMathematics%28IPAM%29 
+            (Chao Yang - Practical Quantum Circuits for Block Encodings of Sparse Matrices - IPAM at UCLA) for more information.
         Example:
             script:
                 A = np.array([
@@ -107,7 +112,8 @@ def QSVT(
         phi_seq: np.ndarray, 
         # d: int, 
         A: np.ndarray,
-        convention = "R"
+        convention = "R",
+        real_only = True
 ) -> QuantumCircuit:
     r"""
         Description:
@@ -160,22 +166,23 @@ def QSVT(
 
     n = int(np.log2(A.shape[0]))
 
-    # qr = QuantumRegister(n + 2)
-    qr = QuantumRegister(n + 1)
+    if real_only:
+        qr = QuantumRegister(n + 2)
+        block, work, aux = qr[0:n], qr[-2], qr[-1]
+    else:
+        qr = QuantumRegister(n + 1)
+        block, work = qr[0:n], qr[-1]
+
     qc = QuantumCircuit(qr)
 
-    # block, work, aux = qr[0:n], qr[-2], qr[-1]
-    block, work = qr[0:n], qr[-1]
-
-    # A_dag = np.conjugate(np.transpose(A))
-    # U = block_encode(A_dag)
     U = block_encode(A)
 
     U_gate = UnitaryGate(data=U, label='$U$')
     Ud_gate = U_gate.adjoint()
 
     # For some kind of implementing real polynomial. See [Quantum Algorithms for Scientific Computation] p.107.
-    # qc.h(aux)
+    if real_only:
+        qc.h(aux)
 
     for k in range(1, d // 2 + 1):
         if n > 1:
@@ -185,20 +192,20 @@ def QSVT(
 
         ##################################################
 
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
+        if real_only:
+            qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
 
-        # if d % 2 == 1:
-        #     qc.rz(phi=phi_seq[2 * k + 1], qubit=aux)
-        # else:
-        #     qc.rz(phi=phi_seq[2 * k], qubit=aux)
+            if d % 2 == 1:
+                qc.rz(phi=phi_seq[2 * k + 1], qubit=aux)
+            else:
+                qc.rz(phi=phi_seq[2 * k], qubit=aux)
 
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
-
-
-        if d % 2 == 1:
-            qc.rz(phi=-phi_seq[2 * k + 1], qubit=work)
+            qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
         else:
-            qc.rz(phi=-phi_seq[2 * k], qubit=work)
+            if d % 2 == 1:
+                qc.rz(phi=-phi_seq[2 * k + 1], qubit=work)
+            else:
+                qc.rz(phi=-phi_seq[2 * k], qubit=work)
 
 
         #################################################
@@ -211,19 +218,20 @@ def QSVT(
 
         #################################################
 
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
+        if real_only:
+            qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
 
-        # if d % 2 == 1:
-        #     qc.rz(phi=phi_seq[2 * k], qubit=aux)
-        # else:
-        #     qc.rz(phi=phi_seq[2 * k - 1], qubit=aux)
+            if d % 2 == 1:
+                qc.rz(phi=phi_seq[2 * k], qubit=aux)
+            else:
+                qc.rz(phi=phi_seq[2 * k - 1], qubit=aux)
 
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
-
-        if d % 2 == 1:
-            qc.rz(phi=-phi_seq[2 * k], qubit=work)
+            qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
         else:
-            qc.rz(phi=-phi_seq[2 * k - 1], qubit=work)
+            if d % 2 == 1:
+                qc.rz(phi=-phi_seq[2 * k], qubit=work)
+            else:
+                qc.rz(phi=-phi_seq[2 * k - 1], qubit=work)
             
         #################################################
 
@@ -237,14 +245,16 @@ def QSVT(
         else:
             qc.append(U_gate, qargs=[block, work])
 
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
-        # qc.rz(phi=phi_seq[1], qubit=aux)
-        # qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
-
+    if real_only:
+        qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
+        qc.rz(phi=phi_seq[1], qubit=aux)
+        qc.cx(control_qubit=work, target_qubit=aux, ctrl_state=0)
+    else:
         qc.rz(phi=-phi_seq[1], qubit=work)
     
-    # For some kind of implementing real polynomial. See [Quantum Algorithms for Scientific Computation] p.107.
-    # qc.h(aux)
+    # Implement only the real part of the given polynomial. See [Quantum Algorithms for Scientific Computation] p.107.
+    if real_only:
+        qc.h(aux)
         
     return qc
 
@@ -273,6 +283,12 @@ def implement_real(
         # n: int
 ) -> QuantumCircuit:
     """
+        [Deprecation]
+            This function is deprecated. The functionality of implementing only the 
+            real part of a polynomial is integrated into QSVT().
+
+            The main reason for deprecation is due to the inefficiency of `qc.to_gate()`,
+            which leads to long circuit preparation time and deep transpiled circuit.
         Description:
             In many cases, we only want the "real" part of our approximated 
             polynomial "Poly()" in QSVT. Given two input quantum circuits that 

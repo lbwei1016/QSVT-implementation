@@ -11,8 +11,8 @@ do
         echo "Now running N = ${N}, set_deg = ${d}."
 
         filename="${N}q-nAA-${d}"
-        record="./results_tmp/${filename}.txt"
-        profile="./profiles_tmp/${filename}.prof"
+        record="./experiments/results_tmp/${filename}.txt"
+        profile="./experiments/profiles_tmp/${filename}.prof"
 
         time srun python3 -m cProfile -o "${profile}" qsvt-linear-solver.py -N ${N} -d ${d} > ${record}
 

@@ -6,7 +6,7 @@ from qiskit.quantum_info import Statevector
 import numpy as np
 
 # from qsvt.algorithms import linear_solver
-from qsvt.algorithms_beta import linear_solver
+from qsvt.algorithms import linear_solver
 from qsvt.helper import total_variation, gen_random_matrix
 
 from qiskit import transpile
@@ -64,10 +64,10 @@ def exec():
             elif currentArgument in ("-d", "--set_degree"):
                 set_degree = int(currentValue)
                 print(f"set_degree = {set_degree}")
-            elif currentArgument in ("-s", "--simulation_method"):
-                if 
-                simulation_method = 
-                print(f'simulation_method = {simulation_method}')
+            # elif currentArgument in ("-s", "--simulation_method"):
+            #     if 
+            #     simulation_method = 
+            #     print(f'simulation_method = {simulation_method}')
                 
     except getopt.error as err:
         # output error, and return with an error code

@@ -2,7 +2,7 @@ from qiskit.quantum_info import Statevector
 
 import numpy as np
 
-from qsvt.algorithms_beta import linear_solver
+from qsvt.algorithms import linear_solver
 from qsvt.helper import total_variation, gen_random_matrix
 
 from qiskit import transpile

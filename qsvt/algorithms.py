@@ -3,8 +3,8 @@ from qiskit.circuit import QuantumRegister
 from qiskit.extensions import UnitaryGate
 
 from qsvt.core import *
-from qsvt.helper import cvx_poly_coef
-from .Solvers.QSP_solver import QSP_Solver
+# from qsvt.helper import cvx_poly_coef
+# from .Solvers.QSP_solver import QSP_Solver
 
 import numpy as np
 from warnings import warn
@@ -97,7 +97,7 @@ def amplitude_amplification(
         Wx_seq = [-0.14030619300699504, 0.31770910376491157, -0.2159687350010641, 0.5376368100800262, -0.6561965311157821, -0.570587000131174, -0.029578881455564865, 0.29810643597957565, 1.185054925225846, -0.26170748520431114, -0.06251690387218234, -0.5952101173964184, -0.3062334505793054, 0.46333819051152153, -0.9745105865317089, -0.974510586522954, 0.46333819051936453, -0.3062334505815665, 2.5463825361924144, -0.06251690388673614, -0.26170748519919007, -1.9565377283595162, 0.2981064359713328, -0.029578881442567484, -0.5705870001297568, 2.485396122476667, -2.6039558435092593, -0.21596873500304925, 0.3177091037658908, 1.430490133786587]
         d, phi_seq = convert_convention(Wx_seq)
     elif transformation == 'AA':
-        # 這有奇效，但不見得管用
+        # This works well on low probabilities (but performance is not guaranteed).
         # pyqsp --plot-npts=4000 --plot-positive-only --plot-magnitude --plot --seqargs=21,1.0e-20 --seqname fpsearch angles --output-json
         Wx_seq = [-1.6289766249603586, -1.454208011876622, -1.7462485302871582, -1.3357954977223736, -1.8662600481340057, -1.213725811224108, -1.9908459961512452, -1.0861701139264175, -2.1218145928902925, -0.9513642785202095, -2.260851457478332, -0.8077485591343427, -2.4093286369239166, -0.6542153401660733, -2.567999066787916, -0.49046601602792345, -2.736605610844485, -0.3174051062134276, -2.9135294062485397, -0.13739160893601188, -3.0957015611621053, -3.0957015611621053, -0.13739160893601188, -2.9135294062485397, -0.3174051062134276, -2.736605610844485, -0.49046601602792345, -2.567999066787916, -0.6542153401660733, -2.4093286369239166, -0.8077485591343427, -2.260851457478332, -0.9513642785202095, -2.1218145928902925, -1.0861701139264175, -1.9908459961512452, -1.213725811224108, -1.8662600481340057, -1.3357954977223736, -1.7462485302871582, -1.454208011876622, -1.6289766249603586]
         # pyqsp --plot-npts=4000  --plot-magnitude --plot --seqargs=10,0.8 --seqname fpsearch angles --output-json
@@ -285,7 +285,8 @@ def linear_solver(
         real_only = True,
         amplify = 'NONE',
         eps = 0.01,
-        set_kappa = False
+        set_degree = 0
+        # set_kappa = False
 ) -> QuantumCircuit:
     r"""
         Description:
@@ -311,12 +312,13 @@ def linear_solver(
 
                     [# of qubits] |   real_only = True   |   real_only = False   |   
                     --------------|----------------------|-----------------------|
-                        amplified |        n + 4         |         n + 3         |
+                        amplified |        n + 3         |         n + 2         |
                     --------------|----------------------|-----------------------|
-                    not amplified |        n + 3         |         n + 2         |
+                    not amplified |        n + 2         |         n + 1         |
 
                 Suppose "real_only = True" and we have amplified the circuit. Let "qr" be 
                 "qc's" quantum register, then
+                (below comment outdated: 2023/08/08)
                     qr[0:n]: The register we are in interest;
                     qr[n]: Ancilla qubit for block-encoding;
                     qr[n+1]: Ancilla qubit for phase shift (QSVT)
@@ -333,110 +335,117 @@ def linear_solver(
     """
     # R convention (angle sequence for 1/x; fixed)
     # d = 121 (degree)
-    phi_seq = np.array([0.0, 190.0663500808966, -1.570792332211534, -1.570803175587046, -1.57078533277455, -1.570813154313031, -1.5707714941803497, -1.5708319139087061, -1.570746548967131, -1.5708645354861015, -1.570704514471793, -1.5709179886472342, -1.5706373438081545, -1.571001491350469, -1.5705345583001469, -1.5711268622308265, -1.5703829360143802, -1.5713087797005645, -1.570166285962922, -1.571564998893927, -1.569865271403714, -1.5719164148231348, -1.5694574674921569, -1.5723869687052803, -1.5689174744388823, -1.573003377969213, -1.5682173717552426, -1.5737946587196114, -1.5673272644962362, -1.5747913643979465, -1.5662161662173397, -1.5760246155293127, -1.5648531373324035, -1.5775248154467165, -1.5632087158671584, -1.579320041196319, -1.5612567054040773, -1.5814340652773506, -1.558976360068157, -1.5838839313870032, -1.5563550827287989, -1.5866769793775468, -1.5533916844518771, -1.5898072585315322, -1.5501003248952576, -1.5932512682256263, -1.5465150426507057, -1.5969631792151664, -1.5426947047965607, -1.6008699021892487, -1.538727711133374, -1.6048668428324833, -1.5347354156790864, -1.6088157324178185, -1.5308725950860975, -1.612546377782502, -1.5273229730395141, -1.615864308131166, -1.5242880602670779, -1.6185655920144242, -1.521968776260039, -1.6204583585560368, -1.6204583585560368, -1.521968776260039, -1.6185655920144242, -1.5242880602670779, -1.615864308131166, -1.5273229730395141, -1.612546377782502, -1.5308725950860975, -1.6088157324178185, -1.5347354156790864, -1.6048668428324833, -1.538727711133374, -1.6008699021892487, -1.5426947047965607, -1.5969631792151664, -1.5465150426507057, -1.5932512682256263, -1.5501003248952576, -1.5898072585315322, -1.5533916844518771, -1.5866769793775468, -1.5563550827287989, -1.5838839313870032, -1.558976360068157, -1.5814340652773506, -1.5612567054040773, -1.579320041196319, -1.5632087158671584, -1.5775248154467165, -1.5648531373324035, -1.5760246155293127, -1.5662161662173397, -1.5747913643979465, -1.5673272644962362, -1.5737946587196114, -1.5682173717552426, -1.573003377969213, -1.5689174744388823, -1.5723869687052803, -1.5694574674921569, -1.5719164148231348, -1.569865271403714, -1.571564998893927, -1.570166285962922, -1.5713087797005645, -1.5703829360143802, -1.5711268622308265, -1.5705345583001469, -1.571001491350469, -1.5706373438081545, -1.5709179886472342, -1.570704514471793, -1.5708645354861015, -1.570746548967131, -1.5708319139087061, -1.5707714941803497, -1.570813154313031, -1.57078533277455, -1.570803175587046, -1.570792332211534])
-
-    # print(f'origin phi: {phi_seq}')
+    phi_seq_121 = np.array([0.0, 190.0663500808966, -1.570792332211534, -1.570803175587046, -1.57078533277455, -1.570813154313031, -1.5707714941803497, -1.5708319139087061, -1.570746548967131, -1.5708645354861015, -1.570704514471793, -1.5709179886472342, -1.5706373438081545, -1.571001491350469, -1.5705345583001469, -1.5711268622308265, -1.5703829360143802, -1.5713087797005645, -1.570166285962922, -1.571564998893927, -1.569865271403714, -1.5719164148231348, -1.5694574674921569, -1.5723869687052803, -1.5689174744388823, -1.573003377969213, -1.5682173717552426, -1.5737946587196114, -1.5673272644962362, -1.5747913643979465, -1.5662161662173397, -1.5760246155293127, -1.5648531373324035, -1.5775248154467165, -1.5632087158671584, -1.579320041196319, -1.5612567054040773, -1.5814340652773506, -1.558976360068157, -1.5838839313870032, -1.5563550827287989, -1.5866769793775468, -1.5533916844518771, -1.5898072585315322, -1.5501003248952576, -1.5932512682256263, -1.5465150426507057, -1.5969631792151664, -1.5426947047965607, -1.6008699021892487, -1.538727711133374, -1.6048668428324833, -1.5347354156790864, -1.6088157324178185, -1.5308725950860975, -1.612546377782502, -1.5273229730395141, -1.615864308131166, -1.5242880602670779, -1.6185655920144242, -1.521968776260039, -1.6204583585560368, -1.6204583585560368, -1.521968776260039, -1.6185655920144242, -1.5242880602670779, -1.615864308131166, -1.5273229730395141, -1.612546377782502, -1.5308725950860975, -1.6088157324178185, -1.5347354156790864, -1.6048668428324833, -1.538727711133374, -1.6008699021892487, -1.5426947047965607, -1.5969631792151664, -1.5465150426507057, -1.5932512682256263, -1.5501003248952576, -1.5898072585315322, -1.5533916844518771, -1.5866769793775468, -1.5563550827287989, -1.5838839313870032, -1.558976360068157, -1.5814340652773506, -1.5612567054040773, -1.579320041196319, -1.5632087158671584, -1.5775248154467165, -1.5648531373324035, -1.5760246155293127, -1.5662161662173397, -1.5747913643979465, -1.5673272644962362, -1.5737946587196114, -1.5682173717552426, -1.573003377969213, -1.5689174744388823, -1.5723869687052803, -1.5694574674921569, -1.5719164148231348, -1.569865271403714, -1.571564998893927, -1.570166285962922, -1.5713087797005645, -1.5703829360143802, -1.5711268622308265, -1.5705345583001469, -1.571001491350469, -1.5706373438081545, -1.5709179886472342, -1.570704514471793, -1.5708645354861015, -1.570746548967131, -1.5708319139087061, -1.5707714941803497, -1.570813154313031, -1.57078533277455, -1.570803175587046, -1.570792332211534])
 
     # It's the adjoint of A, not A itself!
     X = np.conj(A.T)
 
-
-    # Check the source code of "qsppack".
-    if set_kappa == True:
-        kappa = np.linalg.cond(X)
-        # Heuristically adjust kappa
-        # kappa *= 3
-
-        # print(f'kappa: {kappa}')
-
-        # kappa = 10
-
-        b = int(kappa ** 2 * np.log2(kappa / eps))
-        # print(f'b: {b}')
-
-        # Heuristically adjust deg
-
-        if kappa <= 10:
-            deg = 121
-        else:
-            deg = int(1.2 * int(np.sqrt(b * np.log2(4 * b / eps))) + 1)
-            deg = min(deg, 500)
-
-        # deg = int(b * np.log2(4 * b / eps))
-        # deg = int(np.sqrt(b * np.log2(4 * b / eps)))
-        # deg = 121
-
-        print(f'degree (cvx): {deg}')
-
-        opts = {
-            'npts': 500,
-            'epsil': eps,
-            'fscale': 1,
-            'intervals': [1/kappa, 1],
-            'isplot': True,
-            'objnorm': np.inf
-        }
+############ Directly calculate the desired polynomial (may be slow) ############
+    # if set_kappa == True:
+    #     kappa = np.linalg.cond(X)
+    #     # b = int(kappa ** 2 * np.log2(kappa / eps))
+    #     # deg = int(np.sqrt(b * np.log2(4 * b / eps))) + 1
 
 
-        def x_inverse(x):
-            return 1 / (2*kappa * x)
+    #     # Heuristically adjust deg
+    #     interval = 5.0001
+    #     if kappa <= 10 + interval:
+    #         phi_seq = phi_seq_121
+    #         # deg = 121
+    #         # npts = 500
+    #     # elif kappa <= 25:
+    #     #     phi_seq = phi_seq_500
+    #     #     # deg = int(1.2 * int(np.sqrt(b * np.log2(4 * b / eps))) + 1)
+    #     #     # deg = min(deg, 500)
+    #     #     # npts = 5000
+    #     else:
+    #         Wx_seq = []
+    #         # if kappa <= 30 + interval: file = './qsvt/inv901.txt'
+    #         # else: file = './qsvt/inv2501.txt'
+    #         if kappa <= 15 + interval:
+    #             file = './qsvt/inv601.txt'
+    #         else:
+    #             file = './qsvt/inv2501.txt'
+
+    #         with open(file, 'r') as f:
+    #             Wx_seq = f.read().split('\n')
+    #             Wx_seq = [float(x) for x in Wx_seq]
+        
+    #         _, phi_seq = convert_convention(Wx_seq)
+
+        # opts = {
+        #     'npts': npts,
+        #     'epsil': eps,
+        #     'fscale': 1,
+        #     'intervals': [1/kappa, 1],
+        #     'isplot': True,
+        #     'objnorm': np.inf
+        # }
+
+
+        # def x_inverse(x):
+        #     return 1 / (2*kappa * x)
         
 
-        coef_full = cvx_poly_coef(x_inverse, deg, opts)
-        parity = deg % 2
-        coef = coef_full[parity::2]
+        # coef_full = cvx_poly_coef(x_inverse, deg, opts)
+        # parity = deg % 2
+        # coef = coef_full[parity::2]
 
-        opts = {
-            'maxiter': 100,
-            'criteria': 1e-12,
-            'useReal': True,
-            # 'useReal': False,
-            'targetPre': True,
-            # 'method': 'Newton'
-        }
+        # opts = {
+        #     'maxiter': 100,
+        #     'criteria': 1e-12,
+        #     'useReal': True,
+        #     # 'useReal': False,
+        #     'targetPre': True,
+        #     # 'method': 'Newton'
+        # }
 
-        Wx_seq, out = QSP_Solver(coef, parity, opts)
+        # Wx_seq, out = QSP_Solver(coef, parity, opts)
 
-        # print(f'Wx: {Wx_seq}')
-        _, phi_seq = convert_convention(Wx_seq)
-    
-        # print(f'gen phi: {phi_seq}')
-
-    import time
-    st = time.time()
-    qc = QSVT(phi_seq, X)
-    ed = time.time()
-    print(f'QSVT spends: {ed - st} sec')
-
-    if real_only:
-        st0 = time.time()
-        qc_conj = QSVT(-phi_seq, X)
-        ed = time.time()
-        print(f'QSVT spends: {ed - st0} sec')
+        # _, phi_seq = convert_convention(Wx_seq)
 
 
-        st0 = time.time()
-        qc_real = implement_real(qc, qc_conj)
-        ed = time.time()
-        print(f'implement real spends: {ed - st0} sec')
-
-        n = qc_real.num_qubits
-        if amplify != 'NONE':
-            # n - 3: for block-encoding; n - 1: for LCU (implement_real())
-            # See the source codes of "qsvt.core" for more information.
-
-            # After removing "aux" in "qsvt.core.QSVT". (2023/08/01)
-            qc_real = amplitude_amplification(qc_real, "00", [n - 2, n - 1], amplify)
-            # qc_real = amplitude_amplification(qc_real, "00", [n - 3, n - 1], amplify)
-        
-        ed = time.time()
-        print(f'the whole linear solver spends: {ed - st} sec')
-        return qc_real
-        
+############ Apply pre-calculated polynomials ############
+    if set_degree == 0:
+        phi_seq = phi_seq_121
     else:
+        Wx_seq = []
+        if set_degree == 1:
+            file = './qsvt/inv_k50_d601.txt'
+        elif set_degree == 2:
+            file = './qsvt/inv_k150_d1501.txt'
+        elif set_degree == 3:
+            file = './qsvt/inv_k200_d2001.txt'
+        else:
+            file = './qsvt/inv_k1000_d5001.txt'
+
+        with open(file, 'r') as f:
+            Wx_seq = f.read().split('\n')
+            Wx_seq = [float(x) for x in Wx_seq]
+    
+        _, phi_seq = convert_convention(Wx_seq)
+
+    print(f'deg: {len(phi_seq)-1}')
+
+
+
+    # import time
+    # st = time.time()
+    qc = QSVT(phi_seq, X, real_only=real_only)
+    # ed = time.time()
+    # print(f'QSVT spends: {ed - st} sec')
+
+
+    # Apply amplitude amplification (may significantly increase circuit depth)
+    if amplify != 'NONE':
         n = qc.num_qubits
-        if amplify != 'NONE':
-            # After removing "aux" in "qsvt.core.QSVT". (2023/08/01)
-            qc = amplitude_amplification(qc, "0", [n - 2], amplify)
-            # qc = amplitude_amplification(qc, "0", [n - 3], amplify)
-        return qc
+        if real_only:
+            measure_qubits = [n - 2, n - 1]
+            measure_states = "00"
+        else:
+            measure_qubits = [n - 2]
+            measure_states = "0"
+
+        qc = amplitude_amplification(qc, measure_states, measure_qubits, amplify)
+    
+    return qc
