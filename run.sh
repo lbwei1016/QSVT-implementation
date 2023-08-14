@@ -8,7 +8,7 @@ do
     flag="1"
     for N in $(seq $START $END)
     do
-        # d = 0: deg = 121; d = 1: deg = 601; d = 2: deg = 2501
+        # d = 0: deg = 121; d = 1: deg = 601; d = 2: deg = 1501; d = 3: deg = 2001; d = 4: deg = 5001
         echo "Now running N = ${N}, set_deg = ${d}."
 
         filename="${N}q-nAA-${d}"

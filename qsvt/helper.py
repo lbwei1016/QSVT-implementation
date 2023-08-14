@@ -1,13 +1,7 @@
-# Helper functions for verifying whether the result is correct.
-# Loosely defined functions.
-# May be replaced by numpy directly.
-
 import numpy as np
 import matplotlib.pyplot as plt
 
 import time
-
-# import numba
 
 
 # Credit: "qsppack" (https://github.com/qsppack/QSPPACK)
@@ -73,32 +67,13 @@ def cvx_poly_coef(func, deg, opts=None):
     for k in range(1, n_coef + 1):
         if parity == 0:
             coef = [0] * (2 * (k - 1)) + [1]
-            # Ax[:, k - 1] = cheby_calc(xpts, 2 * (k - 1))
-            # Tcheb = np.polynomial.chebyshev.cheb2poly(2 * (k - 1))
         else:
             coef = [0] * (2 * k - 1) + [1]
-            # Ax[:, k - 1] = cheby_calc(xpts, 2 * k - 1)
-            # Tcheb = np.polynomial.chebyshev.cheb2poly(2 * k - 1)
-        # print(f'Tcheb: {Tcheb}')
-        # print(f'xpts: {xpts}')
-        # Ax[:, k - 1] = Tcheb[xpts]
         Ax[:, k - 1] = np.polynomial.chebyshev.chebval(xpts, coef)
 
     # Use CVXPY to optimize the Chebyshev coefficients
     coef = cp.Variable(n_coef)
     y = cp.Variable(npts)
-
-    # print(ind_union.shape)
-    # print(ind_union)
-    # print(ind_union)
-    # y = cp.Variable()
-
-    # print('I am half way!')
-
-    # print(f'y: {y}')
-    # print(f'fx: {fx}')
-    # print(y, fx[ind_union], opts['objnorm'])
-    # print(cp.norm(y - fx[ind_union], opts['objnorm']))
 
 
     objective = cp.Minimize(cp.norm(y[ind_union] - fx[ind_union], opts['objnorm']))
@@ -233,30 +208,21 @@ def sinkx(S, k):
 
 ##############################################################################
 
-# # Generate a random circulant matrix.
+# Generate a random circulant matrix.
 def circulant_matrix(N):
-    # a = [np.random.random() for _ in range(2 ** N)]
-
     np.random.seed(65535)
 
     a, b = np.random.random(2**N), np.random.random(2**N)
     for i in range(2 ** N):
-        # k = np.random.random()
         if b[i] > 0.5: 
             a[i] *= -1
-    # print(a)
 
-    # A = []
     A = np.zeros((2**N, 2**N))
-    # for _ in range(2 ** N):
-    #     A.append(a)
-    #     a = np.roll(a, 1)
-
-    # A = np.array(A)
 
     for i in range(2 ** N):
         A[i] = a
         a = np.roll(a, 1)
+
     # kappa = np.linalg.cond(A)
     return A
 

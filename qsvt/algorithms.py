@@ -284,7 +284,7 @@ def linear_solver(
         A: np.ndarray,      
         real_only = True,
         amplify = 'NONE',
-        eps = 0.01,
+        # eps = 0.01,
         set_degree = 0
         # set_kappa = False
 ) -> QuantumCircuit:
