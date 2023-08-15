@@ -209,8 +209,9 @@ def sinkx(S, k):
 ##############################################################################
 
 # Generate a random circulant matrix.
-def circulant_matrix(N):
-    np.random.seed(65535)
+def circulant_matrix(N, fixed=True):
+    if fixed:
+        np.random.seed(65535)
 
     a, b = np.random.random(2**N), np.random.random(2**N)
     for i in range(2 ** N):

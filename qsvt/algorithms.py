@@ -298,12 +298,14 @@ def linear_solver(
             real_only: Indicate whether to fully implement "A^{-1}". (See Note for details.)
             amplify: If "amplify != 'NONE'", use "amplify" to perform AA. 
                      (amplify = 'chebyshev', 'sign', or 'AA')
-            eps: Precision of the approximated polynomial (approximating 1/x).
-            set_kappa: By default, the condition number (kappa) of the input matrix is assumed 
-                       to be "10", and the polynomial is approximated to "1 / (2*kappa*x)". 
-                       However, if "set_kappa = True", the aprroximated polynomial would follow
-                       the "true" condition number of the input matrix. (Warning: It is recommended
-                       that for input with small condition number, "set_kappa = False".)
+            
+            [Deprecated]
+                eps: Precision of the approximated polynomial (approximating 1/x).
+                set_kappa: By default, the condition number (kappa) of the input matrix is assumed 
+                           to be "10", and the polynomial is approximated to "1 / (2*kappa*x)". 
+                           However, if "set_kappa = True", the aprroximated polynomial would follow
+                           the "true" condition number of the input matrix. (Warning: It is recommended
+                           that for input with small condition number, "set_kappa = False".)
         Return:
             qc: A quantum circuit that computes "A^{-1}". There are 4 possibilities regarding
                 the return "qc": "real_only" or not and "amplify" or not. 
@@ -322,10 +324,9 @@ def linear_solver(
                     qr[0:n]: The register we are in interest;
                     qr[n]: Ancilla qubit for block-encoding;
                     qr[n+1]: Ancilla qubit for phase shift (QSVT)
-                    qr[n+2]: Ancilla qubit for LCU;
-                    qr[n+3]: Ancilla qubit for phase shift (AA).
-                To obtain desired outcomes, the user should "post-select 00" for "qr[n]" and
-                "qr[n+2]".
+                    qr[n+2]: Ancilla qubit for phase shift (AA).
+                To obtain the desired outcomes, the user should "post-select 00" for "qr[n]" and
+                "qr[n+1]".
         Note:
             Note that if "real_only" is set to "False", then the resulting
             circuit doesn't compute "A^{-1}" exactly: only the "real part" of the applied
