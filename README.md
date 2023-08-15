@@ -24,3 +24,7 @@ This repository consists of implementations of the main framework of Quantum Sin
 - `qsvt-qpe.ipynb`: example for QPE
 - `qsvt-linear-solver*.py`: more complex example for solving QLSP
 - `*run.sh`: running experiements
+
+## Caution
+
+Due to some numerical issues, arbitrary matrix may fail to be block-encoded for `linear_solver`. To experiment with `linear_solver`, it is recommended to use [circulant matrices](https://en.wikipedia.org/wiki/Circulant_matrix).
