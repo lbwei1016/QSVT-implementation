@@ -3,3 +3,5 @@ qsvt/__pycache__
 qsvt/.ipynb_checkpoints
 .ipynb_checkpoints
 memo.*
+qsvt-linear-solver-eig*
+*test*
