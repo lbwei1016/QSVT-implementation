@@ -222,6 +222,7 @@ def circulant_matrix(N, fixed=True):
 
     for i in range(2 ** N):
         A[i] = a
+        # shift right (if shift left, "A" become symmetric)
         a = np.roll(a, 1)
 
     # kappa = np.linalg.cond(A)
