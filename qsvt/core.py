@@ -93,7 +93,9 @@ def block_encode(A: np.ndarray) -> np.ndarray:
     n = A.shape[0]
 
     A_dag = np.conjugate(np.transpose(A))
-    I_AAd = np.identity(n) - A @ A_dag # this should Hermitian
+    
+    # this should Hermitian
+    I_AAd = np.identity(n) - A @ A_dag 
     eigval, eigvec = np.linalg.eig(I_AAd)
 
     sq_I_AAd = eigvec * np.sqrt(eigval) @ np.linalg.inv(eigvec)
@@ -123,16 +125,22 @@ def QSVT(
             phi_seq: The sequence of angles for projector controlled phase shift.
             A: The matrix to be transformed.
             convention: Angle sequence convention. By default, "R" is used. Another possibility is "Wx".
-
+            real_only: The given "phi_seq" is assumed to implement a complex polynomial. However, if 
+                       "real_only = True", only the real part of the polynomial is implemented, which
+                       costs 1 more ancilla qubit.
+            
             [Deprecated]
                 n: The dimension of the input matrix. (e.g. A 8*8 matrix has dimension 3 (= lg8).)
                 d: The degree of the target polynomial.
         Return:
-            qc: The quantum circuit implementing QSVT. This is a (n+1)-qubit circuit, where
+            qc: The quantum circuit implementing QSVT. This is an (n+1)-qubit circuit, where
                 "A" is a "2^n by 2^n" matrix. Let "qr" be "qc's" quantum register, then
                     qr[0:n]: The register we are in interest.
                     qr[-1]: Ancilla qubit for block-encoding and phase shift.
                 The user should "post-select 0" for "qr[-1]" to obtain the desired outcome.
+
+                If "real_only = True", then "qc" is an (n+2)-qubit circuit, where qr[0:n] is still
+                the register in interest, and the remaining are ancilla qubits.
         Note:
             In the literature, there are two "projectors" \tilde{\Pi} and \Pi that 
             specify the encoding of "A" (i.e., projector unitary encoding). However, 
