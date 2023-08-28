@@ -24,6 +24,8 @@ This repository consists of implementations of the main framework of Quantum Sin
 - `qsvt-qpe.ipynb`: example for QPE
 - `qsvt-linear-solver*.py`: more complex example for solving QLSP
 - `*run.sh`: running experiements
+- `qsvt-linear-solver-eig-plot.ipynb`: plot results for eigenvalue / singular value experiments
+  - check whether small-degree polynomials can preserve eigenvalues / singular values
 
 ## Caution
 
