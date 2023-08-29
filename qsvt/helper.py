@@ -237,19 +237,16 @@ def sparse_matrix(A, d):
             A[i, j] = 0
     return A
 
-def gen_random_matrix(kappa_upper, d, N):
-    while True:
-        st = time.time()
-        A = circulant_matrix(N)
-        ed = time.time()
-        print(f'time: {ed - st}')
+def random_matrix(N, fixed=True):
+    if fixed:
+        np.random.seed(65535)
 
-        # no sparse currently
-        # d = min(d, 2**N)
-        # A = sparse_matrix(A, d)
+    A = np.zeros((2 ** N, 2 ** N), dtype=np.double)
+    for j in range(2 ** N):
+        a, b = np.random.random(2**N), np.random.random(2**N)
+        for i in range(2 ** N):
+            if b[i] > 0.5: 
+                a[i] *= -1
+        A[j] = a
 
-        # kappa = np.linalg.cond(A)
-        # print(f'kappa: {kappa}')
-        # if kappa <= kappa_upper: 
-        #     return A
-        return A
+    return A

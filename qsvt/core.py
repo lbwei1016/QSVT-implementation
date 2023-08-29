@@ -115,7 +115,8 @@ def QSVT(
         # d: int, 
         A: np.ndarray,
         convention = "R",
-        real_only = True
+        real_only = True,
+        high_precision_block_encoding = True
 ) -> QuantumCircuit:
     r"""
         Description:
@@ -128,6 +129,10 @@ def QSVT(
             real_only: The given "phi_seq" is assumed to implement a complex polynomial. However, if 
                        "real_only = True", only the real part of the polynomial is implemented, which
                        costs 1 more ancilla qubit.
+            high_precision_block_encoding: If this is "True", then "pennylane.BlockEncode()" is used to 
+                                           block encode the input matrix, since my own implementation lose
+                                           precision easily on large-condition-number matrices. If you 
+                                           don't want to depend on pennylane, set this to "False".
             
             [Deprecated]
                 n: The dimension of the input matrix. (e.g. A 8*8 matrix has dimension 3 (= lg8).)
@@ -183,7 +188,11 @@ def QSVT(
 
     qc = QuantumCircuit(qr)
 
-    U = block_encode(A)
+    if high_precision_block_encoding:
+        import pennylane as qml
+        U = qml.matrix(qml.BlockEncode(A, wires=range(n + 1)))
+    else:
+        U = block_encode(A)
 
     U_gate = UnitaryGate(data=U, label='$U$')
     Ud_gate = U_gate.adjoint()
