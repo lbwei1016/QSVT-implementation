@@ -127,7 +127,7 @@ def total_variation(P: np.ndarray, Q: np.ndarray):
     return np.sum(np.abs(P - Q)) / 2
 
 
-############# Warning! The functions covered runs extremely slow! ########################
+############# Warning! The functions covered run extremely slow! ########################
 def cheby(n: int) -> list:
     """
         Description & Return:
