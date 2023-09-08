@@ -32,3 +32,5 @@ This repository consists of implementations of the main framework of Quantum Sin
 Due to some numerical issues, arbitrary matrix may fail to be block-encoded for `linear_solver`. To experiment with `linear_solver`, it is recommended to use [circulant matrices](https://en.wikipedia.org/wiki/Circulant_matrix).
 
 > **Fix (2023/08/29):**  [`pennylane.BlockEncode()`](https://docs.pennylane.ai/en/stable/code/api/pennylane.BlockEncode.html) is utilized instead for accurate block-encoding. Old codes need not be modified.
+
+> **Fix again (2023/09/08)**: It turns out that there is a **bug** in my implementation of `block_encode()`, which is not a numerical one. After fixing it, `block_encode()` works well, and thus `pennylane.BlockEncode()` is not required anymore.

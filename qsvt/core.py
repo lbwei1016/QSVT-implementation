@@ -97,18 +97,13 @@ def block_encode(A: np.ndarray) -> np.ndarray:
     # this should Hermitian
     I_AAd = np.identity(n) - A @ A_dag 
     eigval, eigvec = np.linalg.eig(I_AAd)
-
     sq_I_AAd = eigvec * np.sqrt(eigval) @ np.linalg.inv(eigvec)
-    
 
     I_AdA = np.identity(n) - A_dag @ A
     eigval, eigvec = np.linalg.eig(I_AdA)
-
     sq_I_AdA = eigvec * np.sqrt(eigval) @ np.linalg.inv(eigvec)
 
-
     U = np.zeros(shape=(2 * n, 2 * n), dtype=complex)
-
     U[0:n, 0:n] = A
     U[0:n, n:] = sq_I_AAd
     U[n:, 0:n] = sq_I_AdA
