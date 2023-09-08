@@ -55,7 +55,7 @@ def block_encode(A: np.ndarray) -> np.ndarray:
             Given a target matrix A, return a unitary block-encoding U of A, in the form:
                 
                 U = [ A                      sqrt(I - AA^\dagger) ]
-                    [ sqrt(I - AA^\dagger)   A                    ].
+                    [ sqrt(I - A^\dagger A)  -A^\dagger                    ].
 
             If the input matrix A has norm greater than 1, an exception would be raised! (Normalize it first!)
             (Why not normalize the input automatically? The author suppose that the caller should "completely know"
