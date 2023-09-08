@@ -99,12 +99,19 @@ def block_encode(A: np.ndarray) -> np.ndarray:
     eigval, eigvec = np.linalg.eig(I_AAd)
 
     sq_I_AAd = eigvec * np.sqrt(eigval) @ np.linalg.inv(eigvec)
+    
+
+    I_AdA = np.identity(n) - A_dag @ A
+    eigval, eigvec = np.linalg.eig(I_AdA)
+
+    sq_I_AdA = eigvec * np.sqrt(eigval) @ np.linalg.inv(eigvec)
+
 
     U = np.zeros(shape=(2 * n, 2 * n), dtype=complex)
 
     U[0:n, 0:n] = A
     U[0:n, n:] = sq_I_AAd
-    U[n:, 0:n] = sq_I_AAd
+    U[n:, 0:n] = sq_I_AdA
     U[n:, n:] = -A_dag
 
     return U
@@ -116,7 +123,7 @@ def QSVT(
         A: np.ndarray,
         convention = "R",
         real_only = True,
-        high_precision_block_encoding = True
+        # high_precision_block_encoding = True
 ) -> QuantumCircuit:
     r"""
         Description:
@@ -129,14 +136,15 @@ def QSVT(
             real_only: The given "phi_seq" is assumed to implement a complex polynomial. However, if 
                        "real_only = True", only the real part of the polynomial is implemented, which
                        costs 1 more ancilla qubit.
-            high_precision_block_encoding: If this is "True", then "pennylane.BlockEncode()" is used to 
-                                           block encode the input matrix, since my own implementation lose
-                                           precision easily on large-condition-number matrices. If you 
-                                           don't want to depend on pennylane, set this to "False".
-            
+
             [Deprecated]
                 n: The dimension of the input matrix. (e.g. A 8*8 matrix has dimension 3 (= lg8).)
                 d: The degree of the target polynomial.
+                high_precision_block_encoding: If this is "True", then "pennylane.BlockEncode()" is used to 
+                                               block encode the input matrix, since my own implementation lose
+                                               precision easily on large-condition-number matrices. If you 
+                                               don't want to depend on pennylane, set this to "False".
+                (block_encode() has been fixed!)
         Return:
             qc: The quantum circuit implementing QSVT. This is an (n+1)-qubit circuit, where
                 "A" is a "2^n by 2^n" matrix. Let "qr" be "qc's" quantum register, then
@@ -188,11 +196,13 @@ def QSVT(
 
     qc = QuantumCircuit(qr)
 
-    if high_precision_block_encoding:
-        import pennylane as qml
-        U = qml.matrix(qml.BlockEncode(A, wires=range(n + 1)))
-    else:
-        U = block_encode(A)
+    # if high_precision_block_encoding:
+    #     import pennylane as qml
+    #     U = qml.matrix(qml.BlockEncode(A, wires=range(n + 1)))
+    # else:
+    #    U = block_encode(A)
+
+    U = block_encode(A)
 
     U_gate = UnitaryGate(data=U, label='$U$')
     Ud_gate = U_gate.adjoint()
