@@ -12,7 +12,7 @@ from qiskit.visualization import plot_histogram
 import time
 import getopt, sys
 
-import memory_profiler
+# import memory_profiler
 # @memory_profiler.profile
 
 
@@ -20,7 +20,7 @@ OVERALL_TIME = 0
 AA_On = False
 set_degree = 0
 # simulation_method = 'statevector'
-MPI_NODES = 0
+MPI_ON = False
 SIMULATION = False
 # matrix size exponent
 N = 1
@@ -31,7 +31,7 @@ def parse_cmd_parameters():
     argumentList = sys.argv[1:]
 
     # Options
-    options = "hN:ad:m:s"
+    options = "hN:ad:ms"
 
     # Long options
     long_options = ["help", "num-of-qubits-for-matrix=", "AA", "set-degree", 'mpi', 'self-sampling']
@@ -39,7 +39,7 @@ def parse_cmd_parameters():
     global OVERALL_TIME
     global AA_On
     global set_degree
-    global MPI_NODES
+    global MPI_ON
     global SIMULATION 
     global N
 
@@ -55,7 +55,7 @@ def parse_cmd_parameters():
     -h: Show help
     -N <Number of qubits for matrix>: specify matrix size
     -a: Use AA
-    -m <Number of nodes>: enable MPI and specify the number of nodes to run on 
+    -m: enable MPI
     -s: Run simulation (with AerSimulator), rather than self-sample the statevetor
                 """
                 print(help_msg)
@@ -72,8 +72,8 @@ def parse_cmd_parameters():
                 set_degree = int(currentValue)
                 print(f"set_degree = {set_degree}")
             elif currentArgument in ('-m', '--mpi'):
-                MPI_NODES = int(currentValue)
-                print(f'MPI is on with {MPI_NODES} nodes')
+                MPI_ON = True
+                print(f'MPI is on with {MPI_ON} nodes')
             elif currentArgument in ('-s', 'self-sampling'):
                 SIMULATION = True
                 print('Experiment with AerSimulator')
@@ -243,7 +243,7 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     # run job
     st = time.time()
 
-    if MPI_NODES > 0:
+    if MPI_ON:
         # 'blocking_qubits=10' is set ignorantly here
         job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
     else:
@@ -256,6 +256,12 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     ed = time.time()
     OVERALL_TIME += (ed - st)
     print(f'run job spends: {ed - st} sec')
+
+    if MPI_ON:
+        meta = exp_result.to_dict()['metadata']
+        myrank = meta['mpi_rank']
+        print(f'myrank: {myrank}')
+    
     print("==========================================================")
 
     return exp_counts
@@ -266,7 +272,7 @@ if __name__ == '__main__':
     A = gen_random_unitary()
     qc = create_circuit(A)
 
-    if SIMULATION:
+    if SIMULATION or MPI_ON: 
         exp_counts = simulation(qc)
     else:
         Q = prepare_snapshot(A, qc)
