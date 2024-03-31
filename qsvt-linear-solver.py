@@ -257,7 +257,6 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     OVERALL_TIME += (ed - st)
     print(f'run job spends: {ed - st} sec')
     print("==========================================================")
-    print(f'total execution time (exclude snapshot): {OVERALL_TIME} sec')
 
     return exp_counts
 
@@ -272,3 +271,5 @@ if __name__ == '__main__':
     else:
         Q = prepare_snapshot(A, qc)
         self_sampling(qc, Q)
+
+    print(f'total execution time (exclude snapshot): {OVERALL_TIME} sec')
