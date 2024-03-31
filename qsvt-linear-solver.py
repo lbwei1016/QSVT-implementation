@@ -12,7 +12,7 @@ from qiskit.visualization import plot_histogram
 import time
 import getopt, sys
 
-import memory_profiler
+# import memory_profiler
 # @memory_profiler.profile
 
 
@@ -256,6 +256,12 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     ed = time.time()
     OVERALL_TIME += (ed - st)
     print(f'run job spends: {ed - st} sec')
+
+    if MPI_NODES > 0:
+        meta = exp_result.to_dict()['metadata']
+        myrank = meta['mpi_rank']
+        print(f'myrank: {myrank}')
+    
     print("==========================================================")
 
     return exp_counts
@@ -266,7 +272,7 @@ if __name__ == '__main__':
     A = gen_random_unitary()
     qc = create_circuit(A)
 
-    if SIMULATION:
+    if SIMULATION: 
         exp_counts = simulation(qc)
     else:
         Q = prepare_snapshot(A, qc)
