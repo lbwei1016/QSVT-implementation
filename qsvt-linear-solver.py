@@ -73,7 +73,7 @@ def parse_cmd_parameters():
                 print(f"set_degree = {set_degree}")
             elif currentArgument in ('-m', '--mpi'):
                 MPI_ON = True
-                print(f'MPI is on with {MPI_ON} nodes')
+                print(f'MPI is on')
             elif currentArgument in ('-s', 'self-sampling'):
                 SIMULATION = True
                 print('Experiment with AerSimulator')
@@ -261,6 +261,8 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
         meta = exp_result.to_dict()['metadata']
         myrank = meta['mpi_rank']
         print(f'myrank: {myrank}')
+
+        print(meta)
     
     print("==========================================================")
 
