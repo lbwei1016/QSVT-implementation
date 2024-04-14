@@ -1,6 +1,7 @@
 from qiskit import QuantumCircuit
 from qiskit.circuit import QuantumRegister
-from qiskit.extensions import UnitaryGate
+# from qiskit.extensions import UnitaryGate
+from qiskit.circuit.library import UnitaryGate
 
 import numpy as np
 

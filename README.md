@@ -1,5 +1,7 @@
 # QSVT Implementation
 
+> WARNING: This is an experimental branch that tries to migrate existing QSVT implementation to Qiskit 1.0.
+
 This repository consists of implementations of the main framework of Quantum Singular Value Transformation (QSVT), and some algorithms based on it.
 
 ## Implemented Algorithms
