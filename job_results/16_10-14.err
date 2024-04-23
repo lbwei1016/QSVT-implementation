@@ -1,0 +1,1110 @@
+------ module OpenMPI 5.0.2 loaded.
+------ module OpenMPI 5.0.2 loaded.
+
+CondaError: Run 'conda init' before 'conda activate'
+
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+Traceback (most recent call last):
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+--------------------------------------------------------------------------
+prterun detected that one or more processes exited with non-zero status,
+thus causing the job to be terminated. The first process to do so was:
+
+   Process name: [prterun-icpnq134-2269140@1,5] Exit code:    1
+--------------------------------------------------------------------------
+ [LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+Traceback (most recent call last):
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp_counts = exp_result.get_counts()
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+    exp_counts = exp_result.get_counts()
+    exp = self._get_experiment(key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+    exp_counts = exp_result.get_counts()
+    exp_counts = exp_result.get_counts()
+    exp = self._get_experiment(key)
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    exp = self._get_experiment(key)
+    exp = self._get_experiment(key)
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+    exp = self._get_experiment(key)
+    raise QiskitError(result_status, ", ", exp_status)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+    exp = self._get_experiment(key)
+    exp = self._get_experiment(key)
+    raise QiskitError(result_status, ", ", exp_status)
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+--------------------------------------------------------------------------
+prterun detected that one or more processes exited with non-zero status,
+thus causing the job to be terminated. The first process to do so was:
+
+   Process name: [prterun-icpnq134-2270047@1,8] Exit code:    1
+--------------------------------------------------------------------------
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+ [LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp = self._get_experiment(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+Traceback (most recent call last):
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 277, in <module>
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+    exp_counts = simulation(qc)
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/QSVT-implementation/qsvt-linear-solver.py", line 256, in simulation
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+    exp_counts = exp_result.get_counts()
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp_counts = exp_result.get_counts()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+    exp_counts = exp_result.get_counts()
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+    exp = self._get_experiment(key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+    exp = self._get_experiment(key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+    exp = self._get_experiment(key)
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 269, in get_counts
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+    exp = self._get_experiment(key)
+    exp = self._get_experiment(key)
+    raise QiskitError(result_status, ", ", exp_status)
+    exp = self._get_experiment(key)
+    raise QiskitError(result_status, ", ", exp_status)
+    exp = self._get_experiment(key)
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+    raise QiskitError(result_status, ", ", exp_status)
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+  File "/home/u6945379/miniconda3/envs/qiskit_1.0/lib/python3.11/site-packages/qiskit/result/result.py", line 397, in _get_experiment
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+    raise QiskitError(result_status, ", ", exp_status)
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+qiskit.exceptions.QiskitError: 'ERROR:  [Experiment 0] cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20 ,  ERROR: cache blocking : there are gates operation can not cache blocked in blocking_qubits = 20'
+--------------------------------------------------------------------------
+prterun detected that one or more processes exited with non-zero status,
+thus causing the job to be terminated. The first process to do so was:
+
+   Process name: [prterun-icpnq134-2271803@1,6] Exit code:    1
+--------------------------------------------------------------------------
+ [LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+--------------------------------------------------------------------------
+prterun noticed that process rank 11 with PID 1893014 on node icpnq145 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+ [LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+--------------------------------------------------------------------------
+prterun noticed that process rank 10 with PID 2313219 on node icpnq144 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+ [LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_MCAST] No MCAST components selected
+
+[LOG_CAT_ML] Failure in hcoll_mcast_base_select
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+[LOG_CAT_ML] component ucx_p2p is not available but requested in hierarchy: basesmuma,basesmuma,ucx_p2p:basesmsocket,basesmuma,p2p
+[LOG_CAT_ML] ml_discover_hierarchy exited with error
+slurmstepd: error: *** JOB 15384 ON icpnq134 CANCELLED AT 2024-04-23T10:13:30 DUE TO TIME LIMIT ***
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=15384.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
+--------------------------------------------------------------------------
+PRTE has lost communication with a remote daemon.
+
+  HNP daemon   : [prterun-icpnq134-2647767@0,0] on node icpnq134
+  Remote daemon: [prterun-icpnq134-2647767@0,15] on node icpnq149
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
