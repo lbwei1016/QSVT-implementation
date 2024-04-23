@@ -431,7 +431,7 @@ def linear_solver(
     
         _, phi_seq = convert_convention(Wx_seq)
 
-    print(f'deg: {len(phi_seq)-1}')
+    # print(f'deg: {len(phi_seq)-1}')
 
 
 
