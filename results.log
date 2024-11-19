@@ -1,0 +1,176 @@
+N = 1
+Experiment with AerSimulator
+generate matrix time spent: 8.940696716308594e-05 sec
+==================================
+deg: 121
+prepare circuit spends: 0.02587270736694336 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.9022231101989746 sec
+transpiled qc depth: 727
+run job spends: 0.03382730484008789 sec
+==========================================================
+total execution time (exclude snapshot): 0.9619231224060059 sec
+CPU time elapsed: 5.85351 secs
+Peak memory usage: 127180 kB
+N = 2
+Experiment with AerSimulator
+generate matrix time spent: 0.0001010894775390625 sec
+==================================
+deg: 121
+prepare circuit spends: 0.024697065353393555 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 1.3049607276916504 sec
+transpiled qc depth: 727
+run job spends: 0.03668045997619629 sec
+==========================================================
+total execution time (exclude snapshot): 1.3663382530212402 sec
+CPU time elapsed: 5.013079 secs
+Peak memory usage: 115972 kB
+N = 3
+Experiment with AerSimulator
+generate matrix time spent: 0.00013828277587890625 sec
+==================================
+deg: 121
+prepare circuit spends: 0.023823976516723633 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.978839635848999 sec
+transpiled qc depth: 727
+run job spends: 0.04217839241027832 sec
+==========================================================
+total execution time (exclude snapshot): 1.044842004776001 sec
+CPU time elapsed: 3.94094 secs
+Peak memory usage: 115800 kB
+N = 4
+Experiment with AerSimulator
+generate matrix time spent: 0.00020313262939453125 sec
+==================================
+deg: 121
+prepare circuit spends: 0.04965043067932129 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6311540603637695 sec
+transpiled qc depth: 727
+run job spends: 0.0430757999420166 sec
+==========================================================
+total execution time (exclude snapshot): 0.7238802909851074 sec
+CPU time elapsed: 5.836758 secs
+Peak memory usage: 134080 kB
+N = 5
+Experiment with AerSimulator
+generate matrix time spent: 0.000453948974609375 sec
+==================================
+deg: 121
+prepare circuit spends: 0.04165983200073242 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6403946876525879 sec
+transpiled qc depth: 727
+run job spends: 0.06361246109008789 sec
+==========================================================
+total execution time (exclude snapshot): 0.7456669807434082 sec
+CPU time elapsed: 7.232976 secs
+Peak memory usage: 152412 kB
+N = 6
+Experiment with AerSimulator
+generate matrix time spent: 0.0013730525970458984 sec
+==================================
+deg: 121
+prepare circuit spends: 0.08986997604370117 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.9298839569091797 sec
+transpiled qc depth: 727
+run job spends: 0.14500808715820312 sec
+==========================================================
+total execution time (exclude snapshot): 1.164762020111084 sec
+CPU time elapsed: 7.401206 secs
+Peak memory usage: 210188 kB
+N = 7
+Experiment with AerSimulator
+generate matrix time spent: 0.0049397945404052734 sec
+==================================
+deg: 121
+prepare circuit spends: 0.1924140453338623 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6326348781585693 sec
+transpiled qc depth: 727
+run job spends: 0.4995572566986084 sec
+==========================================================
+total execution time (exclude snapshot): 1.32460618019104 sec
+CPU time elapsed: 13.431746999999998 secs
+Peak memory usage: 505904 kB
+N = 8
+Experiment with AerSimulator
+generate matrix time spent: 0.01815629005432129 sec
+==================================
+deg: 121
+prepare circuit spends: 0.3303823471069336 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6418502330780029 sec
+transpiled qc depth: 727
+run job spends: 1.8872418403625488 sec
+==========================================================
+total execution time (exclude snapshot): 2.8594744205474854 sec
+CPU time elapsed: 21.075252999999996 secs
+Peak memory usage: 1655336 kB
+N = 9
+Experiment with AerSimulator
+generate matrix time spent: 0.07058596611022949 sec
+==================================
+deg: 121
+prepare circuit spends: 1.503610372543335 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.621196985244751 sec
+transpiled qc depth: 727
+run job spends: 10.353673458099365 sec
+==========================================================
+total execution time (exclude snapshot): 12.478480815887451 sec
+CPU time elapsed: 72.563716 secs
+Peak memory usage: 6183316 kB
+N = 10
+Experiment with AerSimulator
+generate matrix time spent: 0.27997517585754395 sec
+==================================
+deg: 121
+prepare circuit spends: 5.354538679122925 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.631507158279419 sec
+transpiled qc depth: 727
+run job spends: 72.3952784538269 sec
+==========================================================
+total execution time (exclude snapshot): 78.38132429122925 sec
+CPU time elapsed: 264.68460400000004 secs
+Peak memory usage: 24242640 kB
+N = 11
+Experiment with AerSimulator
+generate matrix time spent: 1.1760814189910889 sec
+==================================
+deg: 121
+prepare circuit spends: 24.44457507133484 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6245388984680176 sec
+transpiled qc depth: 727
+run job spends: 337.04785656929016 sec
+==========================================================
+total execution time (exclude snapshot): 362.116970539093 sec
+CPU time elapsed: 1157.492083 secs
+Peak memory usage: 96418812 kB

@@ -12,7 +12,7 @@ from qiskit.visualization import plot_histogram
 import time
 import getopt, sys
 
-from resource import getrusage, RUSAGE_SELF
+from mpi4py import MPI
 
 # import memory_profiler
 # @memory_profiler.profile
@@ -26,6 +26,8 @@ MPI_ON = False
 SIMULATION = False
 # matrix size exponent
 N = 1
+my_rank = 0
+blocking_qubits = 1
 
 def parse_cmd_parameters():
     # Remove 1st argument from the
@@ -33,7 +35,7 @@ def parse_cmd_parameters():
     argumentList = sys.argv[1:]
 
     # Options
-    options = "hN:ad:ms"
+    options = "hN:ad:m:s"
 
     # Long options
     long_options = ["help", "num-of-qubits-for-matrix=", "AA", "set-degree", 'mpi', 'self-sampling']
@@ -44,6 +46,7 @@ def parse_cmd_parameters():
     global MPI_ON
     global SIMULATION 
     global N
+    global blocking_qubits
 
     try:
         # Parsing argument
@@ -57,7 +60,7 @@ def parse_cmd_parameters():
     -h: Show help
     -N <Number of qubits for matrix>: specify matrix size
     -a: Use AA
-    -m: enable MPI
+    -m <q>: enable MPI, and specify `blocking_qubits=q`
     -s: Run simulation (with AerSimulator), rather than self-sample the statevetor
                 """
                 print(help_msg)
@@ -65,20 +68,20 @@ def parse_cmd_parameters():
                 
             elif currentArgument in ("-N", "--num-of-qubits-for-matrix"):
                 N = int(currentValue)
-                print(f'N = {currentValue}')
-                
+#                print(f'N = {currentValue}')               
             elif currentArgument in ("-a", "--AA"):
                 AA_On = True
-                print('AA is on')
+#                print('AA is on')
             elif currentArgument in ("-d", "--set-degree"):
                 set_degree = int(currentValue)
-                print(f"set_degree = {set_degree}")
+#                print(f"set_degree = {set_degree}")
             elif currentArgument in ('-m', '--mpi'):
                 MPI_ON = True
-                print(f'MPI is on')
-            elif currentArgument in ('-s', 'self-sampling'):
+                blocking_qubits = int(currentValue)
+#                print(f'MPI is on with {MPI_ON} nodes')
+            elif currentArgument in ('-s', 'run simulation'):
                 SIMULATION = True
-                print('Experiment with AerSimulator')
+#                print('Experiment with AerSimulator')
                 
     except getopt.error as err:
         # output error, and return with an error code
@@ -89,12 +92,18 @@ def gen_random_unitary() -> np.ndarray:
     st = time.time()
     A = random_matrix(N)
     ed = time.time()
-    print(f'generate matrix time spent: {ed - st} sec')
-    print('==================================')
+
+    if my_rank == 0:
+        print(f'generate matrix time spent: {ed - st} sec')
+        print('==================================')
 
     A_norm = np.linalg.norm(A)
     A /= A_norm
-    # print(f'A:\n{A}')
+    if my_rank == 0:
+        print(f'A:\n{A}')
+
+#    print(f'calculating condition number...')
+#    kappa = np.linalg.cond(A)
 
     return A
 
@@ -111,11 +120,12 @@ def create_circuit(A: np.ndarray) -> QuantumCircuit:
 
     OVERALL_TIME += (ed - st)
 
-    print(f'prepare circuit spends: {ed - st} sec')
-    print(f'circuit depth: {qc.depth()}')
+    if my_rank == 0:
+        print(f'prepare circuit spends: {ed - st} sec')
+        print(f'circuit depth: {qc.depth()}')
     # qc.draw('mpl')
 
-    print('==================================')
+        print('==================================')
 
     return qc
 
@@ -126,10 +136,14 @@ def prepare_snapshot(A: np.ndarray, qc: QuantumCircuit):
     st = time.time()
     state = Statevector(qc)
     ed = time.time()
-    print(f'prepare state snapshot spends: {ed - st} sec')
+
+    if my_rank == 0:
+        print(f'prepare state snapshot spends: {ed - st} sec')
 
     n = qc.num_qubits
-    print(f'number of qubits: {n}')
+
+    if my_rank == 0:
+        print(f'number of qubits: {n}')
 
     # for AA or not
     if AA_On:
@@ -148,8 +162,10 @@ def prepare_snapshot(A: np.ndarray, qc: QuantumCircuit):
         outcome, mstate = state.measure(measure_qubits)
         if outcome == exp_outcome: break
     ed = time.time()
-    print(f'post-measurement state: {mstate}')
-    print(f'post-selection spends: {ed - st} sec')
+
+    if my_rank == 0:
+        print(f'post-measurement state: {mstate}')
+        print(f'post-selection spends: {ed - st} sec')
 
     # for AA: 3 ancilla qubits
     st = time.time()
@@ -163,19 +179,22 @@ def prepare_snapshot(A: np.ndarray, qc: QuantumCircuit):
     # res = np.linalg.solve(A, np.array([1] + [0] * (2 ** (n - 1) - 1)))
     ed = time.time()
     res /= np.linalg.norm(res)
-    print(f'res: {res}')
-    print(f'Classically solving Ax=b time spent: {ed - st} sec')
+
+    if my_rank == 0:
+        print(f'res: {res}')
+        print(f'Classically solving Ax=b time spent: {ed - st} sec')
 
 
     # Calculate total variation
-    print('==================================')
+        print('==================================')
     P = np.array([mstate[i] for i in range(2 ** N)])
     P = np.array([np.linalg.norm(x)**2 for x in P])
     Q = np.array([x ** 2 for x in res])
 
     # print(f'kappa: {kappa}')
-    print(f'total_variation (exact): {total_variation(P, Q)}')
-    print('==================================')
+    if my_rank == 0:
+        print(f'total_variation (exact): {total_variation(P, Q)}')
+        print('==================================')
 
     return Q
 
@@ -222,7 +241,9 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     global OVERALL_TIME
 
     qc.measure_all()
-    print(f'qc depth: {qc.depth()}')
+
+    if my_rank == 0:
+        print(f'qc depth: {qc.depth()}')
 
     # It seems that even if 'GPU' is specified, GPU is not used at all.
     # Since QSVT involves large multi-qubit gates (block-encoding), "extended_stabilizer" is not efficient.
@@ -235,16 +256,23 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     # transpiled_circuit = transpile(qc, sim)
     transpiled_circuit = transpile(qc, sim, optimization_level=3)
     ed = time.time()
-    print(f'transpilation spends: {ed - st} sec')
+
+    if my_rank == 0:
+        print(f'transpilation spends: {ed - st} sec')
+        print(f'transpiled qc depth: {transpiled_circuit.depth()}')
+
     OVERALL_TIME += (ed - st)
-    print(f'transpiled qc depth: {transpiled_circuit.depth()}')
 
     # run job
     st = time.time()
 
     if MPI_ON:
         # 'blocking_qubits=10' is set ignorantly here
-        job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=10)
+        if my_rank == 0:
+            print(f'blocking_qubits = {blocking_qubits}')
+        job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=blocking_qubits)
+        #job = sim.run(transpiled_circuit, shots=shots, blocking_enable=True, blocking_qubits=12)
+        #job = sim.run(transpiled_circuit, shots=shots, dynamic=True, blocking_enable=True, blocking_qubits=20)
     else:
         job = sim.run(transpiled_circuit, shots=shots, dynamic=True)
 
@@ -254,23 +282,39 @@ def simulation(qc: QuantumCircuit, shots: int=10000) -> list:
     exp_counts = exp_result.get_counts()
     ed = time.time()
     OVERALL_TIME += (ed - st)
-    print(f'run job spends: {ed - st} sec')
 
-    if MPI_ON:
-        meta = exp_result.to_dict()['metadata']
-        myrank = meta['mpi_rank']
-        print(f'myrank: {myrank}')
+    if my_rank == 0:
+        print(f'run job spends: {ed - st} sec')
+        print("==========================================================")
 
-        print(meta)
+#    if MPI_ON:
+#        meta = exp_result.to_dict()['metadata']
+#        myrank = meta['mpi_rank']
+#        print(f'myrank: {myrank}')
     
-    print("==========================================================")
 
     return exp_counts
 
 
+def MPI_init():
+    global my_rank
+
+    world_comm = MPI.COMM_WORLD
+    world_size = world_comm.Get_size()
+    my_rank = world_comm.Get_rank()
+
+    print(f'my_rank: {my_rank}')
+
+
 if __name__ == '__main__':
-    usage_start = getrusage(RUSAGE_SELF)
     parse_cmd_parameters()
+    
+    if MPI_ON:
+        MPI_init()
+
+    if my_rank == 0:
+        print(f'N = {N}')
+
     A = gen_random_unitary()
     qc = create_circuit(A)
 
@@ -280,10 +324,5 @@ if __name__ == '__main__':
         Q = prepare_snapshot(A, qc)
         self_sampling(qc, Q)
 
-    print(f'total execution time (exclude snapshot): {OVERALL_TIME} sec')
-    usage_end = getrusage(RUSAGE_SELF)
-
-    cpu_time = usage_end.ru_utime - usage_start.ru_utime
-    cpu_time += usage_end.ru_stime - usage_start.ru_stime
-    print("CPU time elapsed:", cpu_time, 'secs')
-    print("Peak memory usage:", getrusage(RUSAGE_SELF).ru_maxrss, "kB")
+    if my_rank == 0:
+        print(f'total execution time (exclude snapshot): {OVERALL_TIME} sec')

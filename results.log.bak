@@ -1,0 +1,171 @@
+N = 1
+Experiment with AerSimulator
+generate matrix time spent: 9.34600830078125e-05 sec
+==================================
+deg: 121
+prepare circuit spends: 0.026927471160888672 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 2.600156307220459 sec
+transpiled qc depth: 727
+run job spends: 0.036092281341552734 sec
+==========================================================
+total execution time (exclude snapshot): 2.6631760597229004 sec
+CPU time elapsed: 5.891514 secs
+Peak memory usage: 114668 kB
+N = 2
+Experiment with AerSimulator
+generate matrix time spent: 9.226799011230469e-05 sec
+==================================
+deg: 121
+prepare circuit spends: 0.029479026794433594 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 1.2920432090759277 sec
+transpiled qc depth: 727
+run job spends: 0.03685879707336426 sec
+==========================================================
+total execution time (exclude snapshot): 1.3583810329437256 sec
+CPU time elapsed: 5.592704 secs
+Peak memory usage: 115212 kB
+N = 3
+Experiment with AerSimulator
+generate matrix time spent: 0.00011968612670898438 sec
+==================================
+deg: 121
+prepare circuit spends: 0.020218849182128906 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6356067657470703 sec
+transpiled qc depth: 727
+run job spends: 0.04156017303466797 sec
+==========================================================
+total execution time (exclude snapshot): 0.6973857879638672 sec
+CPU time elapsed: 7.3005510000000005 secs
+Peak memory usage: 128956 kB
+N = 4
+Experiment with AerSimulator
+generate matrix time spent: 0.00021386146545410156 sec
+==================================
+deg: 121
+prepare circuit spends: 0.025557279586791992 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6399543285369873 sec
+transpiled qc depth: 727
+run job spends: 0.044422149658203125 sec
+==========================================================
+total execution time (exclude snapshot): 0.7099337577819824 sec
+CPU time elapsed: 7.890985000000001 secs
+Peak memory usage: 133956 kB
+N = 5
+Experiment with AerSimulator
+generate matrix time spent: 0.0004363059997558594 sec
+==================================
+deg: 121
+prepare circuit spends: 0.04852485656738281 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6349782943725586 sec
+transpiled qc depth: 727
+run job spends: 0.06339383125305176 sec
+==========================================================
+total execution time (exclude snapshot): 0.7468969821929932 sec
+CPU time elapsed: 7.356101 secs
+Peak memory usage: 151376 kB
+N = 6
+Experiment with AerSimulator
+generate matrix time spent: 0.0013284683227539062 sec
+==================================
+deg: 121
+prepare circuit spends: 0.09531974792480469 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.9263958930969238 sec
+transpiled qc depth: 727
+run job spends: 0.14668059349060059 sec
+==========================================================
+total execution time (exclude snapshot): 1.168396234512329 sec
+CPU time elapsed: 7.887714000000001 secs
+Peak memory usage: 208976 kB
+N = 7
+Experiment with AerSimulator
+generate matrix time spent: 0.004680633544921875 sec
+==================================
+deg: 121
+prepare circuit spends: 0.12014102935791016 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.9547145366668701 sec
+transpiled qc depth: 727
+run job spends: 0.49828648567199707 sec
+==========================================================
+total execution time (exclude snapshot): 1.5731420516967773 sec
+CPU time elapsed: 9.788936 secs
+Peak memory usage: 496780 kB
+N = 8
+Experiment with AerSimulator
+generate matrix time spent: 0.017923355102539062 sec
+==================================
+deg: 121
+prepare circuit spends: 0.44368720054626465 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6429562568664551 sec
+transpiled qc depth: 727
+run job spends: 1.8430943489074707 sec
+==========================================================
+total execution time (exclude snapshot): 2.9297378063201904 sec
+CPU time elapsed: 23.037191999999997 secs
+Peak memory usage: 1653496 kB
+N = 9
+Experiment with AerSimulator
+generate matrix time spent: 0.07159948348999023 sec
+==================================
+deg: 121
+prepare circuit spends: 1.5039706230163574 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.662290096282959 sec
+transpiled qc depth: 727
+run job spends: 9.717637538909912 sec
+==========================================================
+total execution time (exclude snapshot): 11.883898258209229 sec
+CPU time elapsed: 74.19512800000001 secs
+Peak memory usage: 6183444 kB
+N = 10
+Experiment with AerSimulator
+generate matrix time spent: 0.28458333015441895 sec
+==================================
+deg: 121
+prepare circuit spends: 5.504546642303467 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6492660045623779 sec
+transpiled qc depth: 727
+run job spends: 84.50237584114075 sec
+==========================================================
+total execution time (exclude snapshot): 90.65618848800659 sec
+CPU time elapsed: 279.705147 secs
+Peak memory usage: 24242840 kB
+N = 11
+Experiment with AerSimulator
+generate matrix time spent: 3.267091751098633 sec
+==================================
+deg: 121
+prepare circuit spends: 45.1700975894928 sec
+circuit depth: 485
+==================================
+qc depth: 486
+transpilation spends: 0.6629619598388672 sec
+transpiled qc depth: 727
